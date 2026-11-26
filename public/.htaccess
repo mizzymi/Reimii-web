@@ -1,0 +1,12 @@
+DirectoryIndex index.html
+RewriteEngine On
+
+RewriteRule ^$ /es/ [R=301,L]
+RewriteRule ^Home/?$ /es/ [R=301,L]
+RewriteRule ^Proyectos/?$ /es/proyectos/ [R=301,L]
+RewriteRule ^Proyectos/(ecopulse|akaladrom)/?$ /es/proyectos/ [R=301,L]
+RewriteRule ^Proyectos/([^/]+)/?$ /es/proyectos/$1/ [R=301,L]
+RewriteRule ^Nosotros/?$ /es/nosotros/ [R=301,L]
+RewriteRule ^Contacto/?$ /es/contacto/ [R=301,L]
+
+ErrorDocument 404 /404.html
