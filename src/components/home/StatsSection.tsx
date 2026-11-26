@@ -1,11 +1,19 @@
 'use client';
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
-import { Download, Rocket, Star, Users } from "lucide-react";
-import { useLanguage } from "../i18n/LanguageContext";
-import { useTheme } from "../ThemeContext";
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Download, Rocket, Star, Users } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
+import { useTheme } from '../ThemeContext';
 
-function AnimatedCounter({ target, suffix = "", isFloat = false }: {target:number; suffix?:string; isFloat?:boolean}) {
+function AnimatedCounter({
+  target,
+  suffix = '',
+  isFloat = false,
+}: {
+  target: number;
+  suffix?: string;
+  isFloat?: boolean;
+}) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
@@ -17,17 +25,13 @@ function AnimatedCounter({ target, suffix = "", isFloat = false }: {target:numbe
     const startTime = performance.now();
     let frameId;
 
-    const animate = (currentTime:number) => {
+    const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       const nextValue = target * eased;
 
-      setCount(
-        isFloat
-          ? Number(nextValue.toFixed(1))
-          : Math.floor(nextValue),
-      );
+      setCount(isFloat ? Number(nextValue.toFixed(1)) : Math.floor(nextValue));
 
       if (progress < 1) {
         frameId = requestAnimationFrame(animate);
@@ -58,44 +62,44 @@ export default function StatsSection() {
     {
       icon: Rocket,
       value: 3,
-      suffix: "+",
+      suffix: '+',
       label: s.launched,
       accent: isDark
-        ? "bg-[#f2b7d4]/12 text-[#f2b7d4] border-[#f2b7d4]/20"
-        : "bg-[#fceaf3] text-[#a94f7c] border-[#e7a8c7]/45",
+        ? 'bg-[#f2b7d4]/12 text-[#f2b7d4] border-[#f2b7d4]/20'
+        : 'bg-[#fceaf3] text-[#a94f7c] border-[#e7a8c7]/45',
     },
     {
       icon: Download,
       value: 10,
-      suffix: "+",
+      suffix: '+',
       label: s.downloads,
       accent: isDark
-        ? "bg-[#d9c6f2]/12 text-[#d9c6f2] border-[#d9c6f2]/20"
-        : "bg-[#eee7f8] text-[#8264aa] border-[#d9c6f2]/55",
+        ? 'bg-[#d9c6f2]/12 text-[#d9c6f2] border-[#d9c6f2]/20'
+        : 'bg-[#eee7f8] text-[#8264aa] border-[#d9c6f2]/55',
     },
     {
       icon: Star,
       value: 4.8,
-      suffix: "",
+      suffix: '',
       label: s.rating,
       accent: isDark
-        ? "bg-amber-300/10 text-amber-300 border-amber-300/20"
-        : "bg-[#fff1d8] text-[#a76a19] border-[#f1cf92]/55",
+        ? 'bg-amber-300/10 text-amber-300 border-amber-300/20'
+        : 'bg-[#fff1d8] text-[#a76a19] border-[#f1cf92]/55',
     },
     {
       icon: Users,
       value: 2,
-      suffix: "",
+      suffix: '',
       label: s.team,
       accent: isDark
-        ? "bg-rose-300/10 text-rose-300 border-rose-300/20"
-        : "bg-[#f8e6e8] text-[#a65f68] border-[#e7bfc4]/55",
+        ? 'bg-rose-300/10 text-rose-300 border-rose-300/20'
+        : 'bg-[#f8e6e8] text-[#a65f68] border-[#e7bfc4]/55',
     },
   ];
 
-  const sectionBg = isDark ? "bg-[#151218]" : "bg-[#f7f1e9]";
-  const valueColor = isDark ? "text-white" : "text-[#272229]";
-  const labelColor = isDark ? "text-white/55" : "text-[#756c71]";
+  const sectionBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
+  const valueColor = isDark ? 'text-white' : 'text-[#272229]';
+  const labelColor = isDark ? 'text-white/55' : 'text-[#756c71]';
 
   return (
     <section
@@ -104,7 +108,7 @@ export default function StatsSection() {
       <div
         aria-hidden="true"
         className={`pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl ${
-          isDark ? "bg-fuchsia-500/8" : "bg-[#efbdd4]/30"
+          isDark ? 'bg-fuchsia-500/8' : 'bg-[#efbdd4]/30'
         }`}
       />
 
@@ -119,7 +123,7 @@ export default function StatsSection() {
               transition={{
                 duration: 0.6,
                 delay: i * 0.1,
-                type: "spring",
+                type: 'spring',
                 stiffness: 95,
               }}
               whileHover={{ y: -5 }}
@@ -128,8 +132,8 @@ export default function StatsSection() {
               <div
                 className={`flex h-full flex-col items-center rounded-[1.8rem] border p-5 text-center transition-all duration-500 sm:p-7 lg:p-8 ${
                   isDark
-                    ? "border-white/8 bg-white/[0.045] hover:border-[#f2b7d4]/20"
-                    : "border-white bg-white/75 shadow-[0_18px_45px_rgba(83,61,72,0.07)] hover:shadow-[0_24px_60px_rgba(83,61,72,0.11)]"
+                    ? 'border-white/8 bg-white/[0.045] hover:border-[#f2b7d4]/20'
+                    : 'border-white bg-white/75 shadow-[0_18px_45px_rgba(83,61,72,0.07)] hover:shadow-[0_24px_60px_rgba(83,61,72,0.11)]'
                 }`}
               >
                 <motion.div
@@ -150,9 +154,7 @@ export default function StatsSection() {
                   />
                 </p>
 
-                <p
-                  className={`mt-2 text-xs font-medium leading-5 sm:text-sm ${labelColor}`}
-                >
+                <p className={`mt-2 text-xs font-medium leading-5 sm:text-sm ${labelColor}`}>
                   {stat.label}
                 </p>
               </div>

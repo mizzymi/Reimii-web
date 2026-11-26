@@ -1,1 +1,40 @@
- 'use client';import NextLink from 'next/link';import {usePathname,useRouter,useParams as nextParams} from 'next/navigation';import type {ComponentProps} from 'react';function translate(path:string,locale:string){return '/'+locale+path.replace(/^\/Home$/,'').replace(/^\/Proyectos/,'/proyectos').replace(/^\/Nosotros/,'/nosotros').replace(/^\/Contacto/,'/contacto')}export function Link({to,...props}:Omit<ComponentProps<typeof NextLink>,'href'>&{to:string}){const locale=usePathname().split('/')[1];return <NextLink href={translate(to,locale)} {...props}/> }export function useNavigate(){const router=useRouter(),locale=usePathname().split('/')[1];return (to:string)=>router.push(translate(to,locale))}export function useLocation(){const path=usePathname().split('/').slice(2).join('/');return {pathname:('/'+path).replace(/^\/$/,'/Home').replace(/^\/proyectos/,'/Proyectos').replace(/^\/nosotros/,'/Nosotros').replace(/^\/contacto/,'/Contacto')}}export function useParams(){return nextParams<{slug:string}>()}
+'use client';
+import NextLink from 'next/link';
+import { usePathname, useRouter, useParams as nextParams } from 'next/navigation';
+import type { ComponentProps } from 'react';
+function translate(path: string, locale: string) {
+  return (
+    '/' +
+    locale +
+    path
+      .replace(/^\/Home$/, '')
+      .replace(/^\/Proyectos/, '/proyectos')
+      .replace(/^\/Nosotros/, '/nosotros')
+      .replace(/^\/Contacto/, '/contacto')
+  );
+}
+export function Link({
+  to,
+  ...props
+}: Omit<ComponentProps<typeof NextLink>, 'href'> & { to: string }) {
+  const locale = usePathname().split('/')[1];
+  return <NextLink href={translate(to, locale)} {...props} />;
+}
+export function useNavigate() {
+  const router = useRouter(),
+    locale = usePathname().split('/')[1];
+  return (to: string) => router.push(translate(to, locale));
+}
+export function useLocation() {
+  const path = usePathname().split('/').slice(2).join('/');
+  return {
+    pathname: ('/' + path)
+      .replace(/^\/$/, '/Home')
+      .replace(/^\/proyectos/, '/Proyectos')
+      .replace(/^\/nosotros/, '/Nosotros')
+      .replace(/^\/contacto/, '/Contacto'),
+  };
+}
+export function useParams() {
+  return nextParams<{ slug: string }>();
+}

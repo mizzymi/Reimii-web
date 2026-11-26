@@ -1,9 +1,9 @@
 'use client';
-import React from "react";
-import HeroSection from "../components/home/HeroSection";
-import StatsSection from "../components/home/StatsSection";
-import FeaturedProjects from "../components/home/FeaturedProjects";
-import CTASection from "../components/home/CTASection";
+import React from 'react';
+import HeroSection from '../components/home/HeroSection';
+import StatsSection from '../components/home/StatsSection';
+import FeaturedProjects from '../components/home/FeaturedProjects';
+import CTASection from '../components/home/CTASection';
 
 export default function Home() {
   return (

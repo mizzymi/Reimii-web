@@ -1,1 +1,11 @@
-import Screen from '@/screens/Proyectos';import {dictionary,metadata} from '@/lib/site';type Props={params:Promise<{locale:string}>};export async function generateMetadata({params}:Props){const {locale}=await params;const t=dictionary(locale).projectsPage;return metadata(locale,'/proyectos',t.title,t.description)}export default function Page(){return <Screen/>}
+import Screen from '@/screens/Proyectos';
+import { dictionary, metadata } from '@/lib/site';
+type Props = { params: Promise<{ locale: string }> };
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = dictionary(locale).projectsPage;
+  return metadata(locale, '/proyectos', t.title, t.description);
+}
+export default function Page() {
+  return <Screen />;
+}
