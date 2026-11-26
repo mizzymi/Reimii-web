@@ -34,10 +34,13 @@ export default function ProjectDetail() {
   const [activeImg, setActiveImg] = useState(0);
 
   const index = PROJECT_SLUGS.indexOf(slug ?? '');
+  const isAsteria = slug === 'asteria-rol';
+  const [selectedScreenshot, setSelectedScreenshot] = useState<number | null>(null);
   const project = index >= 0 ? t.projects[index] : null;
 
   useEffect(() => {
     setActiveImg(0);
+    setSelectedScreenshot(null);
   }, [slug]);
 
   const screenshots = useMemo(() => {
@@ -132,10 +135,10 @@ export default function ProjectDetail() {
             >
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={activeImg}
-                  src={screenshots[activeImg]}
-                  alt={`${project.name} screenshot ${activeImg + 1}`}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  key={isAsteria ? PROJECT_IMAGES[index] : activeImg}
+                  src={isAsteria ? PROJECT_IMAGES[index] : screenshots[activeImg]}
+                  alt={isAsteria ? project.name : `${project.name} screenshot ${activeImg + 1}`}
+                  className={`absolute inset-0 h-full w-full ${isAsteria ? 'bg-[#151218] object-contain' : 'object-cover'}`}
                   initial={false}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
@@ -173,7 +176,7 @@ export default function ProjectDetail() {
               </div>
               )}
 
-              {screenshots.length > 1 && (
+              {!isAsteria && screenshots.length > 1 && (
                 <>
                   <button
                     type="button"
@@ -359,14 +362,18 @@ export default function ProjectDetail() {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={`grid gap-4 ${isAsteria ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
               {screenshots.map((screenshot, screenshotIndex) => (
                 <motion.button
                   key={`${screenshot}-${screenshotIndex}`}
                   type="button"
                   onClick={() => {
-                    setActiveImg(screenshotIndex);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (isAsteria) {
+                      setSelectedScreenshot(screenshotIndex);
+                    } else {
+                      setActiveImg(screenshotIndex);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
                   }}
                   whileHover={{ y: -4 }}
                   whileTap={{ scale: 0.99 }}
@@ -380,14 +387,15 @@ export default function ProjectDetail() {
                         : 'border-white'
                   }`}
                 >
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className={`overflow-hidden ${isAsteria ? 'aspect-[709/1536] bg-[#201923]' : 'aspect-[4/3]'}`}>
                     <img
                       src={screenshot}
                       alt={`${project.name} screenshot ${screenshotIndex + 1}`}
-                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
+                      loading="lazy"
+                      className={`h-full w-full transition-transform duration-500 ${isAsteria ? 'object-contain' : 'object-cover hover:scale-[1.04]'}`}
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
+                  {!isAsteria && <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />}
                   <span className="absolute bottom-4 left-4 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-md">
                     {String(screenshotIndex + 1).padStart(2, '0')}
                   </span>
@@ -395,6 +403,21 @@ export default function ProjectDetail() {
               ))}
             </div>
           </motion.section>
+        )}
+
+        {isAsteria && selectedScreenshot !== null && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={project.name}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+            onClick={() => setSelectedScreenshot(null)}
+          >
+            <button type="button" autoFocus aria-label="Close" className="absolute right-4 top-4 rounded-full bg-white px-4 py-2 text-black" onClick={() => setSelectedScreenshot(null)}>×</button>
+            <button type="button" aria-label="Previous" className="absolute left-3 top-1/2 rounded-full bg-black/80 p-3 text-white" onClick={(e) => { e.stopPropagation(); setSelectedScreenshot((selectedScreenshot + screenshots.length - 1) % screenshots.length); }}><ChevronLeft /></button>
+            <img src={screenshots[selectedScreenshot]} alt={project.name + ' ' + (selectedScreenshot + 1)} className="max-h-[88vh] max-w-[80vw] object-contain" onClick={(e) => e.stopPropagation()} />
+            <button type="button" aria-label="Next" className="absolute right-3 top-1/2 rounded-full bg-black/80 p-3 text-white" onClick={(e) => { e.stopPropagation(); setSelectedScreenshot((selectedScreenshot + 1) % screenshots.length); }}><ChevronRight /></button>
+          </div>
         )}
 
         <motion.section
