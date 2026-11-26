@@ -221,7 +221,7 @@ export default function Proyectos() {
                         </div>
 
                         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+                          <p className="project-category-overlay text-[10px] font-bold uppercase tracking-[0.16em] text-white">
                             {project.category}
                           </p>
                           <span className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/80 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md">
@@ -240,7 +240,7 @@ export default function Proyectos() {
                           {project.name}
                         </h2>
 
-                        <p className={`mt-3 flex-1 text-sm leading-6 ${bodyColor}`}>
+                        <p className="project-description mt-3 flex-1 text-sm leading-6">
                           {project.description}
                         </p>
 

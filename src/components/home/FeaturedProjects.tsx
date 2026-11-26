@@ -18,7 +18,6 @@ export default function FeaturedProjects() {
 
   const sectionBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const titleColor = isDark ? 'text-white' : 'text-[#272229]';
-  const mutedColor = isDark ? 'text-[#d3c8d5]' : 'text-[#594d55]';
 
   return (
     <section
@@ -130,7 +129,7 @@ export default function FeaturedProjects() {
                   </div>
 
                   <div className="absolute bottom-4 left-4">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white">
+                    <p className="project-category-overlay text-[11px] font-bold uppercase tracking-[0.16em] text-white">
                       {project.category}
                     </p>
                   </div>
@@ -141,7 +140,7 @@ export default function FeaturedProjects() {
                     {project.name}
                   </h3>
 
-                  <p className={`mt-3 flex-1 text-sm leading-6 ${mutedColor}`}>
+                  <p className="project-description mt-3 flex-1 text-sm leading-6">
                     {project.description}
                   </p>
 

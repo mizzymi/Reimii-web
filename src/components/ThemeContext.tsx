@@ -18,7 +18,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       }}
     >
       <div
-        className={isDark ? 'dark min-h-screen bg-[#151218] text-[#f8eff8]' : 'min-h-screen bg-[#f7f1e9] text-[#272229]'}
+        className={isDark ? 'reimii-theme dark min-h-screen bg-[#151218] text-[#f8eff8]' : 'reimii-theme min-h-screen bg-[#f7f1e9] text-[#272229]'}
         style={{ colorScheme: isDark ? 'dark' : 'light' }}
       >
         {children}
