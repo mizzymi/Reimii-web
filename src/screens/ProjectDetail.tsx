@@ -77,8 +77,8 @@ export default function ProjectDetail() {
 
   const pageBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const titleColor = isDark ? 'text-white' : 'text-[#272229]';
-  const bodyColor = isDark ? 'text-white/65' : 'text-[#756c71]';
-  const mutedColor = isDark ? 'text-white/45' : 'text-[#8b8186]';
+  const bodyColor = isDark ? 'text-[#ded4e0]' : 'text-[#594d55]';
+  const mutedColor = isDark ? 'text-[#c9bdcd]' : 'text-[#62555e]';
   const borderColor = isDark ? 'border-white/10' : 'border-[#e7dce1]';
 
   const prev = () => setActiveImg((value) => (value - 1 + screenshots.length) % screenshots.length);
@@ -109,7 +109,7 @@ export default function ProjectDetail() {
           className={`group mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-bold transition-colors ${
             isDark
               ? 'border-white/10 bg-white/5 text-white/70 hover:text-white'
-              : 'border-[#ded2d7] bg-white/60 text-[#6f656b] hover:text-[#272229]'
+              : 'border-[#ded2d7] bg-white/60 text-[#594d55] hover:text-[#272229]'
           }`}
         >
           <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -143,7 +143,7 @@ export default function ProjectDetail() {
                 />
               </AnimatePresence>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/5" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/15" />
 
               <div className="absolute left-5 top-5 flex flex-wrap gap-2">
                 <span
@@ -152,7 +152,7 @@ export default function ProjectDetail() {
                   {project.status}
                 </span>
 
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-[11px] font-bold text-white backdrop-blur-md">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-[11px] font-bold text-white backdrop-blur-md">
                   {project.type === 'game' ? (
                     <Gamepad2 className="h-3.5 w-3.5" />
                   ) : (
@@ -162,7 +162,7 @@ export default function ProjectDetail() {
                 </span>
               </div>
 
-              <div className="absolute right-5 top-5 rounded-2xl border border-white/15 bg-black/35 px-4 py-3 text-white backdrop-blur-md">
+              <div className="absolute right-5 top-5 rounded-2xl border border-white/15 bg-black/80 px-4 py-3 text-white backdrop-blur-md">
                 <div className="flex items-center gap-1">
                   {[0, 1, 2, 3, 4].map((star) => (
                     <Star key={star} className="h-3.5 w-3.5 fill-current text-amber-300" />
@@ -177,7 +177,7 @@ export default function ProjectDetail() {
                     type="button"
                     onClick={prev}
                     aria-label="Previous screenshot"
-                    className="absolute left-4 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-colors hover:bg-black/55"
+                    className="absolute left-4 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/80 text-white backdrop-blur-md transition-colors hover:bg-black/55"
                   >
                     <ChevronLeft className="h-5 w-5" />
                   </button>
@@ -185,7 +185,7 @@ export default function ProjectDetail() {
                     type="button"
                     onClick={next}
                     aria-label="Next screenshot"
-                    className="absolute right-4 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-md transition-colors hover:bg-black/55"
+                    className="absolute right-4 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/80 text-white backdrop-blur-md transition-colors hover:bg-black/55"
                   >
                     <ChevronRight className="h-5 w-5" />
                   </button>
@@ -193,7 +193,7 @@ export default function ProjectDetail() {
               )}
 
               <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/65">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ded4e0]">
                   {project.category}
                 </p>
                 <h1 className="mt-2 max-w-2xl text-4xl font-black leading-[0.98] tracking-[-0.055em] text-white sm:text-5xl lg:text-6xl">
@@ -212,7 +212,7 @@ export default function ProjectDetail() {
                 className={`mb-6 inline-flex w-fit items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-bold uppercase tracking-[0.17em] ${
                   isDark
                     ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                    : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                    : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
                 }`}
               >
                 <Sparkles className="h-3.5 w-3.5" />
@@ -283,7 +283,7 @@ export default function ProjectDetail() {
                     >
                       <CheckCircle2
                         className={`mt-0.5 h-4 w-4 shrink-0 ${
-                          isDark ? 'text-[#f2b7d4]' : 'text-[#bd5f8d]'
+                          isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'
                         }`}
                       />
                       <p className={`text-sm leading-6 ${bodyColor}`}>{feature}</p>
@@ -308,14 +308,14 @@ export default function ProjectDetail() {
                           tagIndex % 3 === 0
                             ? isDark
                               ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                              : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                              : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
                             : tagIndex % 3 === 1
                               ? isDark
                                 ? 'border-[#d9c6f2]/20 bg-[#d9c6f2]/10 text-[#d9c6f2]'
-                                : 'border-[#d9c6f2]/55 bg-[#eee7f8] text-[#8264aa]'
+                                : 'border-[#d9c6f2]/55 bg-[#eee7f8] text-[#614387]'
                               : isDark
                                 ? 'border-amber-300/20 bg-amber-300/10 text-amber-300'
-                                : 'border-[#f1cf92]/55 bg-[#fff1d8] text-[#a76a19]'
+                                : 'border-[#f1cf92]/55 bg-[#fff1d8] text-[#785016]'
                         }`}
                       >
                         #{tag}
@@ -339,7 +339,7 @@ export default function ProjectDetail() {
               <div>
                 <p
                   className={`text-xs font-bold uppercase tracking-[0.16em] ${
-                    isDark ? 'text-[#f2b7d4]' : 'text-[#a94f7c]'
+                    isDark ? 'text-[#f2b7d4]' : 'text-[#86345e]'
                   }`}
                 >
                   Galería
@@ -384,7 +384,7 @@ export default function ProjectDetail() {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
-                  <span className="absolute bottom-4 left-4 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-md">
+                  <span className="absolute bottom-4 left-4 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-md">
                     {String(screenshotIndex + 1).padStart(2, '0')}
                   </span>
                 </motion.button>
@@ -419,7 +419,7 @@ export default function ProjectDetail() {
           <div className="relative z-10 mx-auto max-w-2xl">
             <Heart
               className={`mx-auto h-7 w-7 fill-current ${
-                isDark ? 'text-[#f2b7d4]' : 'text-[#bd5f8d]'
+                isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'
               }`}
             />
             <h2
@@ -440,7 +440,7 @@ export default function ProjectDetail() {
                 className={`group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold sm:w-auto ${
                   isDark
                     ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                    : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                    : 'bg-[#282329] text-white hover:bg-[#8e3864]'
                 }`}
               >
                 Ver todos los proyectos

@@ -118,3 +118,32 @@ h6 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Keyboard focus remains visible on both brand palettes. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid #86345e;
+  outline-offset: 3px;
+}
+.dark :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline-color: #f2b7d4;
+}
+
+/* Explicit theme tokens keep card copy readable even if a utility is missing. */
+.reimii-theme {
+  --reimii-copy: #594d55;
+  --reimii-foreground: #272229;
+  color: var(--reimii-foreground);
+}
+.reimii-theme.dark {
+  --reimii-copy: #ded4e0;
+  --reimii-foreground: #f8eff8;
+}
+.reimii-theme .project-description {
+  color: var(--reimii-copy);
+}
+.reimii-theme .project-category-overlay {
+  color: #fff;
+  background-color: #201923;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}

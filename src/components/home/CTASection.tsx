@@ -13,7 +13,7 @@ export default function CTASection() {
 
   const sectionBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const titleColor = isDark ? 'text-white' : 'text-[#272229]';
-  const descColor = isDark ? 'text-white/62' : 'text-[#756c71]';
+  const descColor = isDark ? 'text-[#ded4e0]' : 'text-[#594d55]';
 
   return (
     <section
@@ -70,7 +70,7 @@ export default function CTASection() {
               className={`mx-auto mb-7 grid h-16 w-16 place-items-center rounded-[1.4rem] border ${
                 isDark
                   ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                  : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                  : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
               }`}
             >
               <MessageCircle className="h-7 w-7" />
@@ -84,7 +84,7 @@ export default function CTASection() {
               className={`mx-auto mb-5 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-bold uppercase tracking-[0.18em] ${
                 isDark
                   ? 'border-white/10 bg-white/5 text-white/70'
-                  : 'border-[#e4d8dd] bg-white/70 text-[#756c71]'
+                  : 'border-[#e4d8dd] bg-white/70 text-[#594d55]'
               }`}
             >
               <Sparkles className="h-3.5 w-3.5" />
@@ -128,7 +128,7 @@ export default function CTASection() {
                   className={`group inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-sm font-bold transition-colors ${
                     isDark
                       ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                      : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                      : 'bg-[#282329] text-white hover:bg-[#8e3864]'
                   }`}
                 >
                   {c.button}
@@ -147,7 +147,7 @@ export default function CTASection() {
               Ideas, proyectos y colaboraciones
               <Heart
                 className={`h-3.5 w-3.5 fill-current ${
-                  isDark ? 'text-[#f2b7d4]' : 'text-[#ca6d99]'
+                  isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'
                 }`}
               />
             </motion.p>

@@ -44,17 +44,17 @@ export default function Contacto() {
 
   const pageBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const titleColor = isDark ? 'text-white' : 'text-[#272229]';
-  const bodyColor = isDark ? 'text-white/62' : 'text-[#756c71]';
+  const bodyColor = isDark ? 'text-[#ded4e0]' : 'text-[#594d55]';
   const labelColor = isDark ? 'text-white/70' : 'text-[#51484d]';
-  const mutedColor = isDark ? 'text-white/45' : 'text-[#8b8186]';
+  const mutedColor = isDark ? 'text-[#c9bdcd]' : 'text-[#62555e]';
 
   const surface = isDark
     ? 'border-white/8 bg-white/[0.04]'
     : 'border-white bg-white/72 shadow-[0_25px_75px_rgba(83,61,72,0.08)]';
 
   const inputClass = isDark
-    ? 'border-white/10 bg-white/[0.045] text-white placeholder:text-white/30 focus-visible:border-[#f2b7d4]/50 focus-visible:ring-[#f2b7d4]/15'
-    : 'border-[#e8dde2] bg-[#fffafc]/90 text-[#272229] placeholder:text-[#a99da3] focus-visible:border-[#d884ae] focus-visible:ring-[#f2b7d4]/25';
+    ? 'border-[#88798c] bg-white/[0.045] text-white placeholder:text-[#c4b8c7] focus-visible:border-[#f2b7d4]/50 focus-visible:ring-[#f2b7d4]/15'
+    : 'border-[#9a8693] bg-[#fffafc]/90 text-[#272229] placeholder:text-[#665961] focus-visible:border-[#d884ae] focus-visible:ring-[#f2b7d4]/25';
 
   return (
     <main
@@ -84,7 +84,7 @@ export default function Contacto() {
             className={`mb-5 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-bold uppercase tracking-[0.18em] ${
               isDark
                 ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
             }`}
           >
             <Sparkles className="h-3.5 w-3.5" />
@@ -121,7 +121,7 @@ export default function Contacto() {
                     }`}
                   >
                     <CheckCircle2
-                      className={`h-9 w-9 ${isDark ? 'text-[#f2b7d4]' : 'text-[#bd5f8d]'}`}
+                      className={`h-9 w-9 ${isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'}`}
                     />
                   </div>
 
@@ -142,7 +142,7 @@ export default function Contacto() {
                     className={`mt-8 h-12 rounded-full border-0 px-7 text-sm font-bold ${
                       isDark
                         ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                        : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                        : 'bg-[#282329] text-white hover:bg-[#8e3864]'
                     }`}
                   >
                     {c.sendAnother}
@@ -154,7 +154,7 @@ export default function Contacto() {
                 <div>
                   <p
                     className={`text-xs font-bold uppercase tracking-[0.17em] ${
-                      isDark ? 'text-[#f2b7d4]' : 'text-[#a94f7c]'
+                      isDark ? 'text-[#f2b7d4]' : 'text-[#86345e]'
                     }`}
                   >
                     Escríbenos
@@ -238,7 +238,7 @@ export default function Contacto() {
                   className={`h-13 group w-full rounded-full border-0 text-sm font-bold shadow-none ${
                     isDark
                       ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                      : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                      : 'bg-[#282329] text-white hover:bg-[#8e3864]'
                   }`}
                 >
                   <Send className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -260,7 +260,7 @@ export default function Contacto() {
                 className={`grid h-12 w-12 place-items-center rounded-[1rem] border ${
                   isDark
                     ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                    : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                    : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
                 }`}
               >
                 <Mail className="h-5 w-5" />
@@ -274,8 +274,8 @@ export default function Contacto() {
                 href={`mailto:${CONTACT_EMAIL}`}
                 className={`mt-2 inline-block text-sm transition-colors ${
                   isDark
-                    ? 'text-white/55 hover:text-[#f2b7d4]'
-                    : 'text-[#756c71] hover:text-[#bd5f8d]'
+                    ? 'text-[#d3c8d5] hover:text-[#f2b7d4]'
+                    : 'text-[#594d55] hover:text-[#8e3864]'
                 }`}
               >
                 {CONTACT_EMAIL}
@@ -287,7 +287,7 @@ export default function Contacto() {
                 className={`grid h-12 w-12 place-items-center rounded-[1rem] border ${
                   isDark
                     ? 'border-[#d9c6f2]/20 bg-[#d9c6f2]/10 text-[#d9c6f2]'
-                    : 'border-[#d9c6f2]/55 bg-[#eee7f8] text-[#8264aa]'
+                    : 'border-[#d9c6f2]/55 bg-[#eee7f8] text-[#614387]'
                 }`}
               >
                 <MapPin className="h-5 w-5" />
@@ -319,7 +319,7 @@ export default function Contacto() {
                   className={`grid h-12 w-12 place-items-center rounded-[1rem] border ${
                     isDark
                       ? 'border-amber-300/20 bg-amber-300/10 text-amber-300'
-                      : 'border-[#f1cf92]/55 bg-[#fff1d8] text-[#a76a19]'
+                      : 'border-[#f1cf92]/55 bg-[#fff1d8] text-[#785016]'
                   }`}
                 >
                   <Clock3 className="h-5 w-5" />

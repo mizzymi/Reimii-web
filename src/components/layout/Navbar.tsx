@@ -84,9 +84,11 @@ export default function Navbar() {
 
   const shellClass = scrolled
     ? isDark
-      ? 'border-white/10 bg-[#17131b]/88 shadow-[0_18px_55px_rgba(0,0,0,0.28)] backdrop-blur-2xl'
-      : 'border-[#2f2735]/10 bg-[#fffaf4]/88 shadow-[0_18px_55px_rgba(84,62,92,0.12)] backdrop-blur-2xl'
-    : 'border-transparent bg-transparent';
+      ? 'border-white/10 bg-[#17131b]/95 shadow-[0_18px_55px_rgba(0,0,0,0.28)] backdrop-blur-2xl'
+      : 'border-[#2f2735]/10 bg-[#fffaf4]/95 shadow-[0_18px_55px_rgba(84,62,92,0.12)] backdrop-blur-2xl'
+    : isDark
+      ? 'border-white/10 bg-[#17131b]/95 backdrop-blur-2xl'
+      : 'border-[#2f2735]/10 bg-[#fffaf4]/95 backdrop-blur-2xl';
 
   const iconButtonClass = isDark
     ? 'border-white/10 bg-white/[0.06] text-[#f7eff8] hover:border-[#f0a8ca]/35 hover:bg-[#f0a8ca]/10'
@@ -98,7 +100,7 @@ export default function Navbar() {
 
   const languageItemClass = (active: boolean) => {
     if (active) {
-      return isDark ? 'bg-[#f0a8ca]/14 text-[#ffc6df]' : 'bg-[#f9e4ee] text-[#a54575]';
+      return isDark ? 'bg-[#f0a8ca]/14 text-[#ffc6df]' : 'bg-[#f9e4ee] text-[#86345e]';
     }
 
     return isDark
@@ -134,7 +136,7 @@ export default function Navbar() {
               className={`hidden items-center gap-1 rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] xl:flex ${
                 isDark
                   ? 'border-[#f0a8ca]/20 bg-[#f0a8ca]/10 text-[#ffc4df]'
-                  : 'border-[#d98bb2]/20 bg-[#fae7f0] text-[#a94f7a]'
+                  : 'border-[#d98bb2]/20 bg-[#fae7f0] text-[#86345e]'
               }`}
             >
               <Sparkles className="h-3 w-3" />
@@ -173,7 +175,7 @@ export default function Navbar() {
                         transition={spring}
                         className={`absolute inset-0 -z-10 rounded-full ${
                           isDark
-                            ? 'bg-gradient-to-r from-[#704c83] to-[#9b5278] shadow-[0_8px_24px_rgba(213,129,178,0.15)]'
+                            ? 'bg-gradient-to-r from-[#5f3c73] to-[#78395c] shadow-[0_8px_24px_rgba(213,129,178,0.15)]'
                             : 'bg-gradient-to-r from-[#f6d9e7] to-[#e9def8] shadow-[0_8px_24px_rgba(194,132,171,0.18)]'
                         }`}
                       />
@@ -315,7 +317,7 @@ export default function Navbar() {
                             active
                               ? isDark
                                 ? 'bg-[#a4668c]/20 text-[#ffc8e1]'
-                                : 'bg-[#f7e1eb] text-[#9d4771]'
+                                : 'bg-[#f7e1eb] text-[#86345e]'
                               : isDark
                                 ? 'text-[#d8cadc] hover:bg-white/[0.05] hover:text-white'
                                 : 'text-[#5f5263] hover:bg-[#f7eee9] hover:text-[#352d38]'

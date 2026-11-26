@@ -18,7 +18,6 @@ export default function FeaturedProjects() {
 
   const sectionBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const titleColor = isDark ? 'text-white' : 'text-[#272229]';
-  const mutedColor = isDark ? 'text-white/58' : 'text-[#756c71]';
 
   return (
     <section
@@ -47,7 +46,7 @@ export default function FeaturedProjects() {
               className={`mb-5 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-bold uppercase tracking-[0.18em] ${
                 isDark
                   ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                  : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                  : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
               }`}
             >
               <Sparkles className="h-3.5 w-3.5" />
@@ -71,7 +70,7 @@ export default function FeaturedProjects() {
               className={`group inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-bold transition-colors ${
                 isDark
                   ? 'border-white/10 bg-white/5 text-white hover:border-[#f2b7d4]/30 hover:text-[#f2b7d4]'
-                  : 'border-[#ded2d7] bg-white/65 text-[#4f464c] hover:border-[#d8a9c0] hover:text-[#bd5f8d]'
+                  : 'border-[#ded2d7] bg-white/65 text-[#4f464c] hover:border-[#d8a9c0] hover:text-[#8e3864]'
               }`}
             >
               {fp.viewAll}
@@ -124,13 +123,13 @@ export default function FeaturedProjects() {
                     </span>
                   </div>
 
-                  <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 backdrop-blur-md">
+                  <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 backdrop-blur-md">
                     <Star className="h-3.5 w-3.5 fill-current text-amber-300" />
                     <span className="text-xs font-bold text-white">{APP_RATINGS[i]}</span>
                   </div>
 
                   <div className="absolute bottom-4 left-4">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">
+                    <p className="project-category-overlay text-[11px] font-bold uppercase tracking-[0.16em] text-white">
                       {project.category}
                     </p>
                   </div>
@@ -141,7 +140,7 @@ export default function FeaturedProjects() {
                     {project.name}
                   </h3>
 
-                  <p className={`mt-3 flex-1 text-sm leading-6 ${mutedColor}`}>
+                  <p className="project-description mt-3 flex-1 text-sm leading-6">
                     {project.description}
                   </p>
 
@@ -152,7 +151,7 @@ export default function FeaturedProjects() {
                     className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-bold transition-colors ${
                       isDark
                         ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                        : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                        : 'bg-[#282329] text-white hover:bg-[#8e3864]'
                     }`}
                   >
                     {pp.detail}
@@ -170,7 +169,7 @@ export default function FeaturedProjects() {
             className={`group inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-bold transition-colors ${
               isDark
                 ? 'border-white/10 bg-white/5 text-white hover:border-[#f2b7d4]/30 hover:text-[#f2b7d4]'
-                : 'border-[#ded2d7] bg-white/65 text-[#4f464c] hover:border-[#d8a9c0] hover:text-[#bd5f8d]'
+                : 'border-[#ded2d7] bg-white/65 text-[#4f464c] hover:border-[#d8a9c0] hover:text-[#8e3864]'
             }`}
           >
             {fp.viewAllMobile}
