@@ -3,7 +3,6 @@ export const PROJECT_IMAGES = [
   '/images/asteria-rol-logo.png',
   '/images/e190acf44_01.png',
   '/images/a87d0945b_Mockup0.png',
-  '/images/75d3f3bda_generated_58b6ebeb.png',
 ];
 
 export const PROJECT_SCREENSHOTS = [
@@ -19,11 +18,6 @@ export const PROJECT_SCREENSHOTS = [
     '/images/27ffc3a59_Mockup2.png',
     '/images/d19abe03a_Mockup3.png',
   ],
-  [
-    '/images/75d3f3bda_generated_58b6ebeb.png',
-    '/images/game-preview1.png',
-    '/images/game-preview2.png',
-  ],
 ];
 
 // mismo orden que t.projects
@@ -32,15 +26,13 @@ export const PROJECT_TAGS = [
   ['rpg', 'android', 'tools'],
   ['habits', 'productivity', 'wellness', 'android', 'free', 'daily'],
   ['mood', 'wellness', 'mental-health', 'android', 'free', 'journal'],
-  ['rpg', 'game', 'multiplayer', 'open-world', 'pc', 'android'],
 ];
 
-export const APP_RATINGS = [5.0, null, 4.7, 4.6, 5.0];
+export const APP_RATINGS = [5.0, null, 4.7, 4.6];
 
 export const PROJECT_SLUGS = [
   'velora-print',
   'asteria-rol',
   'habit-tracker',
   'aura-mood-tracker',
-  'akaladrom',
 ];

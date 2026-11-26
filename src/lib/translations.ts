@@ -153,16 +153,6 @@ export const translations = {
           'Registro de ánimo con insights: patrones, notas rápidas y tendencias semanales.',
         features: ['Registro diario', 'Patrones de ánimo', 'Notas rápidas', 'Tendencias semanales'],
       },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / Mundo abierto',
-        status: 'Beta',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'RPG multijugador de mundo abierto: explora, sube de nivel y juega con tus amigos en sesiones compartidas.',
-        features: ['Combate dinámico', 'Mundo abierto', 'Multijugador', 'Progresión de personaje'],
-      },
     ],
   },
   en: {
@@ -299,16 +289,6 @@ export const translations = {
         type: 'app',
         description: 'Mood logging with insights: patterns, quick notes and weekly trends.',
         features: ['Daily log', 'Mood patterns', 'Quick notes', 'Weekly trends'],
-      },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / Open World',
-        status: 'Beta',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'Open world multiplayer RPG: explore, level up and play with your friends in shared sessions.',
-        features: ['Dynamic combat', 'Open world', 'Multiplayer', 'Character progression'],
       },
     ],
   },
@@ -461,16 +441,6 @@ export const translations = {
           'Tendances hebdomadaires',
         ],
       },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / Monde ouvert',
-        status: 'Bêta',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'RPG multijoueur en monde ouvert : explorez, montez en niveau et jouez avec vos amis.',
-        features: ['Combat dynamique', 'Monde ouvert', 'Multijoueur', 'Progression du personnage'],
-      },
     ],
   },
   zh: {
@@ -606,15 +576,6 @@ export const translations = {
         description: '情绪记录与洞察：模式、快速笔记和每周趋势。',
         features: ['每日记录', '情绪模式', '快速笔记', '每周趋势'],
       },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / 开放世界',
-        status: '测试版',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description: '开放世界多人RPG：探索、升级并与朋友一起在共享会话中游戏。',
-        features: ['动态战斗', '开放世界', '多人游戏', '角色成长'],
-      },
     ],
   },
   hi: {
@@ -749,15 +710,6 @@ export const translations = {
         type: 'app',
         description: 'मनोदशा लॉगिंग: पैटर्न, त्वरित नोट्स और साप्ताहिक रुझान।',
         features: ['दैनिक लॉग', 'मनोदशा पैटर्न', 'त्वरित नोट्स', 'साप्ताहिक रुझान'],
-      },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / ओपन वर्ल्ड',
-        status: 'बीटा',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description: 'ओपन वर्ल्ड मल्टीप्लेयर RPG: अन्वेषण करें, लेवल अप करें और दोस्तों के साथ खेलें।',
-        features: ['डायनामिक युद्ध', 'ओपन वर्ल्ड', 'मल्टीप्लेयर', 'चरित्र विकास'],
       },
     ],
   },
@@ -895,15 +847,6 @@ export const translations = {
         type: 'app',
         description: 'تسجيل المزاج مع رؤى: أنماط وملاحظات سريعة واتجاهات أسبوعية.',
         features: ['سجل يومي', 'أنماط المزاج', 'ملاحظات سريعة', 'اتجاهات أسبوعية'],
-      },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / عالم مفتوح',
-        status: 'تجريبي',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description: 'RPG متعدد اللاعبين بعالم مفتوح: استكشف وارتقِ بمستواك والعب مع أصدقائك.',
-        features: ['قتال ديناميكي', 'عالم مفتوح', 'متعدد اللاعبين', 'تطور الشخصية'],
       },
     ],
   },
@@ -1053,16 +996,6 @@ export const translations = {
           'Registro de humor com insights: padrões, notas rápidas e tendências semanais.',
         features: ['Registro diário', 'Padrões de humor', 'Notas rápidas', 'Tendências semanais'],
       },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / Mundo Aberto',
-        status: 'Beta',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'RPG multiplayer de mundo aberto: explore, suba de nível e jogue com seus amigos.',
-        features: ['Combate dinâmico', 'Mundo aberto', 'Multiplayer', 'Progressão de personagem'],
-      },
     ],
   },
   ru: {
@@ -1210,16 +1143,6 @@ export const translations = {
           'Быстрые заметки',
           'Еженедельные тренды',
         ],
-      },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / Открытый мир',
-        status: 'Бета',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'Многопользовательская RPG в открытом мире: исследуйте, прокачивайтесь и играйте с друзьями.',
-        features: ['Динамичный бой', 'Открытый мир', 'Мультиплеер', 'Развитие персонажа'],
       },
     ],
   },
@@ -1371,16 +1294,6 @@ export const translations = {
           'Wöchentliche Trends',
         ],
       },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / Offene Welt',
-        status: 'Beta',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'Open-World-Multiplayer-RPG: Erkunde, steig auf und spiele mit deinen Freunden.',
-        features: ['Dynamischer Kampf', 'Offene Welt', 'Mehrspieler', 'Charakterentwicklung'],
-      },
     ],
   },
   ca: {
@@ -1524,16 +1437,6 @@ export const translations = {
         description: "Registre d'ànim amb insights: patrons, notes ràpides i tendències setmanals.",
         features: ['Registre diari', "Patrons d'ànim", 'Notes ràpides', 'Tendències setmanals'],
       },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / Món obert',
-        status: 'Beta',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'RPG multijugador de món obert: explora, puja de nivell i juga amb els teus amics.',
-        features: ['Combat dinàmic', 'Món obert', 'Multijugador', 'Progressió del personatge'],
-      },
     ],
   },
   ja: {
@@ -1671,21 +1574,6 @@ export const translations = {
         description: '気分の記録とインサイト：パターン、クイックノート、週次トレンド。',
         features: ['毎日の記録', '気分パターン', 'クイックノート', '週次トレンド'],
       },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / オープンワールド',
-        status: 'ベータ',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          'オープンワールドマルチプレイヤーRPG：探索してレベルアップし、友達と一緒に遊ぼう。',
-        features: [
-          'ダイナミックな戦闘',
-          'オープンワールド',
-          'マルチプレイヤー',
-          'キャラクター成長',
-        ],
-      },
     ],
   },
   ko: {
@@ -1822,16 +1710,6 @@ export const translations = {
         type: 'app',
         description: '기분 기록 및 인사이트: 패턴, 빠른 노트, 주간 트렌드.',
         features: ['일일 기록', '기분 패턴', '빠른 노트', '주간 트렌드'],
-      },
-      {
-        name: 'Akaladrom',
-        category: 'RPG / 오픈 월드',
-        status: '베타',
-        statusColor: BASE_STATUS_COLORS.beta,
-        type: 'game',
-        description:
-          '오픈 월드 멀티플레이어 RPG: 탐험하고, 레벨업하고, 친구들과 함께 플레이하세요.',
-        features: ['다이나믹 전투', '오픈 월드', '멀티플레이어', '캐릭터 성장'],
       },
     ],
   },
