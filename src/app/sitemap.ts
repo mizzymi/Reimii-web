@@ -5,6 +5,8 @@ import {
   PROJECT_IMAGES,
   PROJECT_SCREENSHOTS,
 } from '@/components/projects/projectsData';
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>
     paths.map((path) => {
