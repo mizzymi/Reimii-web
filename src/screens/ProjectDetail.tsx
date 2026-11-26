@@ -166,14 +166,14 @@ export default function ProjectDetail() {
               </div>
 
               {rating != null && (
-              <div className="absolute right-5 top-5 rounded-2xl border border-white/15 bg-black/80 px-4 py-3 text-white backdrop-blur-md">
-                <div className="flex items-center gap-1">
-                  {[0, 1, 2, 3, 4].map((star) => (
-                    <Star key={star} className="h-3.5 w-3.5 fill-current text-amber-300" />
-                  ))}
+                <div className="absolute right-5 top-5 rounded-2xl border border-white/15 bg-black/80 px-4 py-3 text-white backdrop-blur-md">
+                  <div className="flex items-center gap-1">
+                    {[0, 1, 2, 3, 4].map((star) => (
+                      <Star key={star} className="h-3.5 w-3.5 fill-current text-amber-300" />
+                    ))}
+                  </div>
+                  <p className="mt-1 text-xs font-bold">{rating}</p>
                 </div>
-                <p className="mt-1 text-xs font-bold">{rating}</p>
-              </div>
               )}
 
               {!isAsteria && screenshots.length > 1 && (
@@ -259,19 +259,19 @@ export default function ProjectDetail() {
                 </div>
 
                 {rating != null && (
-<div
-                  className={`rounded-[1.35rem] border p-4 ${
-                    isDark ? 'border-white/8 bg-white/[0.035]' : 'border-[#e8dde2] bg-white/60'
-                  }`}
-                >
-                  <p className={`text-xs font-bold uppercase tracking-[0.14em] ${mutedColor}`}>
-                    Rating
-                  </p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <Star className="h-4 w-4 fill-current text-amber-400" />
-                    <span className={`text-sm font-bold ${titleColor}`}>{rating}</span>
+                  <div
+                    className={`rounded-[1.35rem] border p-4 ${
+                      isDark ? 'border-white/8 bg-white/[0.035]' : 'border-[#e8dde2] bg-white/60'
+                    }`}
+                  >
+                    <p className={`text-xs font-bold uppercase tracking-[0.14em] ${mutedColor}`}>
+                      Rating
+                    </p>
+                    <div className="mt-3 flex items-center gap-2">
+                      <Star className="h-4 w-4 fill-current text-amber-400" />
+                      <span className={`text-sm font-bold ${titleColor}`}>{rating}</span>
+                    </div>
                   </div>
-                </div>
                 )}
               </div>
 
@@ -362,7 +362,9 @@ export default function ProjectDetail() {
               </p>
             </div>
 
-            <div className={`grid gap-4 ${isAsteria ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+            <div
+              className={`grid gap-4 ${isAsteria ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5' : 'sm:grid-cols-2 lg:grid-cols-3'}`}
+            >
               {screenshots.map((screenshot, screenshotIndex) => (
                 <motion.button
                   key={`${screenshot}-${screenshotIndex}`}
@@ -387,7 +389,9 @@ export default function ProjectDetail() {
                         : 'border-white'
                   }`}
                 >
-                  <div className={`overflow-hidden ${isAsteria ? 'aspect-[709/1536] bg-[#201923]' : 'aspect-[4/3]'}`}>
+                  <div
+                    className={`overflow-hidden ${isAsteria ? 'aspect-[709/1536] bg-[#201923]' : 'aspect-[4/3]'}`}
+                  >
                     <img
                       src={screenshot}
                       alt={`${project.name} screenshot ${screenshotIndex + 1}`}
@@ -395,7 +399,9 @@ export default function ProjectDetail() {
                       className={`h-full w-full transition-transform duration-500 ${isAsteria ? 'object-contain' : 'object-cover hover:scale-[1.04]'}`}
                     />
                   </div>
-                  {!isAsteria && <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />}
+                  {!isAsteria && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
+                  )}
                   <span className="absolute bottom-4 left-4 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-md">
                     {String(screenshotIndex + 1).padStart(2, '0')}
                   </span>
@@ -413,10 +419,45 @@ export default function ProjectDetail() {
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
             onClick={() => setSelectedScreenshot(null)}
           >
-            <button type="button" autoFocus aria-label="Close" className="absolute right-4 top-4 rounded-full bg-white px-4 py-2 text-black" onClick={() => setSelectedScreenshot(null)}>×</button>
-            <button type="button" aria-label="Previous" className="absolute left-3 top-1/2 rounded-full bg-black/80 p-3 text-white" onClick={(e) => { e.stopPropagation(); setSelectedScreenshot((selectedScreenshot + screenshots.length - 1) % screenshots.length); }}><ChevronLeft /></button>
-            <img src={screenshots[selectedScreenshot]} alt={project.name + ' ' + (selectedScreenshot + 1)} className="max-h-[88vh] max-w-[80vw] object-contain" onClick={(e) => e.stopPropagation()} />
-            <button type="button" aria-label="Next" className="absolute right-3 top-1/2 rounded-full bg-black/80 p-3 text-white" onClick={(e) => { e.stopPropagation(); setSelectedScreenshot((selectedScreenshot + 1) % screenshots.length); }}><ChevronRight /></button>
+            <button
+              type="button"
+              autoFocus
+              aria-label="Close"
+              className="absolute right-4 top-4 rounded-full bg-white px-4 py-2 text-black"
+              onClick={() => setSelectedScreenshot(null)}
+            >
+              ×
+            </button>
+            <button
+              type="button"
+              aria-label="Previous"
+              className="absolute left-3 top-1/2 rounded-full bg-black/80 p-3 text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedScreenshot(
+                  (selectedScreenshot + screenshots.length - 1) % screenshots.length,
+                );
+              }}
+            >
+              <ChevronLeft />
+            </button>
+            <img
+              src={screenshots[selectedScreenshot]}
+              alt={project.name + ' ' + (selectedScreenshot + 1)}
+              className="max-h-[88vh] max-w-[80vw] object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              type="button"
+              aria-label="Next"
+              className="absolute right-3 top-1/2 rounded-full bg-black/80 p-3 text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedScreenshot((selectedScreenshot + 1) % screenshots.length);
+              }}
+            >
+              <ChevronRight />
+            </button>
           </div>
         )}
 

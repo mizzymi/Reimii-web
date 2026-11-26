@@ -119,7 +119,8 @@ export const translations = {
         status: 'En desarrollo',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'Crea personajes, dirige campañas y gestiona tus partidas de rol con fichas digitales, combate y reglas personalizables.',
+        description:
+          'Crea personajes, dirige campañas y gestiona tus partidas de rol con fichas digitales, combate y reglas personalizables.',
         features: [
           'Fichas digitales de personajes',
           'Campañas y herramientas del Máster',
@@ -263,7 +264,8 @@ export const translations = {
         status: 'In development',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'Create characters, run campaigns and manage tabletop roleplaying sessions with digital sheets, combat and customizable rules.',
+        description:
+          'Create characters, run campaigns and manage tabletop roleplaying sessions with digital sheets, combat and customizable rules.',
         features: [
           'Digital character sheets',
           'Campaigns and game master tools',
@@ -402,7 +404,8 @@ export const translations = {
         status: 'En développement',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'Créez des personnages, dirigez des campagnes et gérez vos parties de jeu de rôle avec des fiches numériques et des règles personnalisables.',
+        description:
+          'Créez des personnages, dirigez des campagnes et gérez vos parties de jeu de rôle avec des fiches numériques et des règles personnalisables.',
         features: [
           'Fiches de personnages numériques',
           'Campagnes et outils du maître du jeu',
@@ -684,7 +687,8 @@ export const translations = {
         status: 'विकास जारी',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'डिजिटल चरित्र शीट, युद्ध और अनुकूलन योग्य नियमों के साथ पात्र बनाएँ और रोलप्ले अभियान चलाएँ।',
+        description:
+          'डिजिटल चरित्र शीट, युद्ध और अनुकूलन योग्य नियमों के साथ पात्र बनाएँ और रोलप्ले अभियान चलाएँ।',
         features: [
           'डिजिटल चरित्र शीट',
           'अभियान और गेम मास्टर उपकरण',
@@ -821,7 +825,8 @@ export const translations = {
         status: 'قيد التطوير',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'أنشئ الشخصيات وأدر الحملات وجلسات تقمص الأدوار باستخدام بطاقات رقمية وأدوات قتال وقواعد قابلة للتخصيص.',
+        description:
+          'أنشئ الشخصيات وأدر الحملات وجلسات تقمص الأدوار باستخدام بطاقات رقمية وأدوات قتال وقواعد قابلة للتخصيص.',
         features: [
           'بطاقات الشخصيات الرقمية',
           'الحملات وأدوات مدير اللعبة',
@@ -963,7 +968,8 @@ export const translations = {
         status: 'Em desenvolvimento',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'Crie personagens, conduza campanhas e gerencie partidas de RPG com fichas digitais, combate e regras personalizáveis.',
+        description:
+          'Crie personagens, conduza campanhas e gerencie partidas de RPG com fichas digitais, combate e regras personalizáveis.',
         features: [
           'Fichas digitais de personagens',
           'Campanhas e ferramentas do mestre',
@@ -1105,7 +1111,8 @@ export const translations = {
         status: 'В разработке',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'Создавайте персонажей, ведите кампании и управляйте настольными ролевыми играми с цифровыми листами, боем и настраиваемыми правилами.',
+        description:
+          'Создавайте персонажей, ведите кампании и управляйте настольными ролевыми играми с цифровыми листами, боем и настраиваемыми правилами.',
         features: [
           'Цифровые листы персонажей',
           'Кампании и инструменты мастера',
@@ -1255,7 +1262,8 @@ export const translations = {
         status: 'In Entwicklung',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'Erstelle Charaktere, leite Kampagnen und verwalte Rollenspielrunden mit digitalen Charakterbögen, Kampf und anpassbaren Regeln.',
+        description:
+          'Erstelle Charaktere, leite Kampagnen und verwalte Rollenspielrunden mit digitalen Charakterbögen, Kampf und anpassbaren Regeln.',
         features: [
           'Digitale Charakterbögen',
           'Kampagnen und Spielleiterwerkzeuge',
@@ -1404,7 +1412,8 @@ export const translations = {
         status: 'En desenvolupament',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'Crea personatges, dirigeix campanyes i gestiona les partides de rol amb fitxes digitals, combat i regles personalitzables.',
+        description:
+          'Crea personatges, dirigeix campanyes i gestiona les partides de rol amb fitxes digitals, combat i regles personalitzables.',
         features: [
           'Fitxes digitals de personatges',
           'Campanyes i eines del màster',
@@ -1547,7 +1556,8 @@ export const translations = {
         status: '開発中',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: 'デジタルキャラクターシート、戦闘機能、カスタマイズ可能なルールでキャラクター作成やキャンペーン管理ができます。',
+        description:
+          'デジタルキャラクターシート、戦闘機能、カスタマイズ可能なルールでキャラクター作成やキャンペーン管理ができます。',
         features: [
           'デジタルキャラクターシート',
           'キャンペーンとGMツール',
@@ -1684,7 +1694,8 @@ export const translations = {
         status: '개발 중',
         statusColor: BASE_STATUS_COLORS.soon,
         type: 'app',
-        description: '디지털 캐릭터 시트, 전투 도구와 사용자 지정 규칙으로 캐릭터를 만들고 캠페인과 역할극 세션을 관리하세요.',
+        description:
+          '디지털 캐릭터 시트, 전투 도구와 사용자 지정 규칙으로 캐릭터를 만들고 캠페인과 역할극 세션을 관리하세요.',
         features: [
           '디지털 캐릭터 시트',
           '캠페인 및 게임 마스터 도구',

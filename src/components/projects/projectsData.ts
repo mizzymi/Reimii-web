@@ -41,9 +41,4 @@ export const PROJECT_TAGS = [
 
 export const APP_RATINGS = [5.0, null, 4.7, 4.6];
 
-export const PROJECT_SLUGS = [
-  'velora-print',
-  'asteria-rol',
-  'habit-tracker',
-  'aura-mood-tracker',
-];
+export const PROJECT_SLUGS = ['velora-print', 'asteria-rol', 'habit-tracker', 'aura-mood-tracker'];

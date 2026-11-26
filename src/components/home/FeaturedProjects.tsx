@@ -104,7 +104,13 @@ export default function FeaturedProjects() {
               >
                 <div className="relative m-3 overflow-hidden rounded-[1.45rem]">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image src={PROJECT_IMAGES[i]} alt={project.name + ' — ' + project.category} fill sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 30vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.055]" />
+                    <Image
+                      src={PROJECT_IMAGES[i]}
+                      alt={project.name + ' — ' + project.category}
+                      fill
+                      sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 30vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.055]"
+                    />
                   </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
@@ -119,9 +125,9 @@ export default function FeaturedProjects() {
 
                   {APP_RATINGS[i] != null && (
                     <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 backdrop-blur-md">
-                    <Star className="h-3.5 w-3.5 fill-current text-amber-300" />
-                    <span className="text-xs font-bold text-white">{APP_RATINGS[i]}</span>
-                  </div>
+                      <Star className="h-3.5 w-3.5 fill-current text-amber-300" />
+                      <span className="text-xs font-bold text-white">{APP_RATINGS[i]}</span>
+                    </div>
                   )}
 
                   <div className="absolute bottom-4 left-4">

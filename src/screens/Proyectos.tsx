@@ -198,7 +198,13 @@ export default function Proyectos() {
                     >
                       <div className="relative m-3 overflow-hidden rounded-[1.45rem]">
                         <div className="relative aspect-[4/3] overflow-hidden">
-                          <Image src={PROJECT_IMAGES[projectIndex]} alt={project.name + ' — ' + project.category} fill sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 30vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.055]" />
+                          <Image
+                            src={PROJECT_IMAGES[projectIndex]}
+                            alt={project.name + ' — ' + project.category}
+                            fill
+                            sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 30vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-[1.055]"
+                          />
                         </div>
 
                         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
@@ -210,13 +216,13 @@ export default function Proyectos() {
                         </span>
 
                         {APP_RATINGS[projectIndex] != null && (
-                    <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 backdrop-blur-md">
-                          <Star className="h-3.5 w-3.5 fill-current text-amber-300" />
-                          <span className="text-xs font-bold text-white">
-                            {APP_RATINGS[projectIndex]}
-                          </span>
-                        </div>
-                  )}
+                          <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 backdrop-blur-md">
+                            <Star className="h-3.5 w-3.5 fill-current text-amber-300" />
+                            <span className="text-xs font-bold text-white">
+                              {APP_RATINGS[projectIndex]}
+                            </span>
+                          </div>
+                        )}
 
                         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
                           <p className="project-category-overlay text-[10px] font-bold uppercase tracking-[0.16em] text-white">
@@ -278,8 +284,8 @@ export default function Proyectos() {
                         </div>
 
                         <Link
-                    to={`/Proyectos/${PROJECT_SLUGS[projectIndex]}`}
-                    aria-label={pp.detail + ': ' + project.name}
+                          to={`/Proyectos/${PROJECT_SLUGS[projectIndex]}`}
+                          aria-label={pp.detail + ': ' + project.name}
                           className={`group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-bold transition-colors ${
                             isDark
                               ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'

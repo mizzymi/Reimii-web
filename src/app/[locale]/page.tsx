@@ -8,4 +8,10 @@ export async function generateMetadata({ params }: Props) {
   const seo = seoCopy(locale as Locale);
   return metadata(locale, '', seo.homeTitle, seo.description);
 }
-export default function Page() { return <main><Screen /></main>; }
+export default function Page() {
+  return (
+    <main>
+      <Screen />
+    </main>
+  );
+}
