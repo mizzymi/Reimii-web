@@ -239,14 +239,6 @@ export default function HeroSection() {
             }`}
           >
             <div
-              className={`absolute right-5 top-5 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] ${
-                isDark ? 'bg-[#f2b7d4]/12 text-[#f2b7d4]' : 'bg-[#f9dce9] text-[#86345e]'
-              }`}
-            >
-              Reimii
-            </div>
-
-            <div
               className={`relative flex min-h-[390px] items-center justify-center overflow-hidden rounded-[2rem] ${
                 isDark
                   ? 'bg-gradient-to-br from-[#241d25] to-[#1a161c]'
