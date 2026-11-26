@@ -1,4 +1,53 @@
-import Link from 'next/link';import {dictionary,metadata} from '@/lib/site';import {ProjectCards} from '@/components/project-cards';
-type Props={params:Promise<{locale:string}>};
-export async function generateMetadata({params}:Props){const {locale}=await params;const t=dictionary(locale);return metadata(locale,'','Reimii Studios — '+t.hero.badge,t.hero.subtitle)}
-export default async function Home({params}:Props){const {locale}=await params;const t=dictionary(locale);return <><section className="hero wrap"><span className="eyebrow">{t.hero.badge}</span><h1>REIMII<span> STUDIOS.</span></h1><p>{t.hero.subtitle} {t.hero.accent}</p><div className="actions"><Link className="button" href={'/'+locale+'/proyectos'}>{t.hero.cta1}</Link><Link className="button secondary" href={'/'+locale+'/nosotros'}>{t.hero.cta2}</Link></div></section><section className="wrap section"><span className="eyebrow">{t.featuredProjects.subtitle}</span><h2 className="heading">{t.featuredProjects.title}</h2><ProjectCards locale={locale}/></section><section className="wrap section"><div className="callout"><h2>{t.cta.title}</h2><p>{t.cta.subtitle}</p><Link className="button" href={'/'+locale+'/contacto'}>{t.cta.button}</Link></div></section></>}
+import Link from "next/link";
+import { dictionary, metadata } from "@/lib/site";
+import { ProjectCards } from "@/components/project-cards";
+type Props = { params: Promise<{ locale: string }> };
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = dictionary(locale);
+  return metadata(
+    locale,
+    "",
+    "Reimii Studios — " + t.hero.badge,
+    t.hero.subtitle,
+  );
+}
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  const t = dictionary(locale);
+  return (
+    <>
+      <section className="hero wrap">
+        <span className="eyebrow">{t.hero.badge}</span>
+        <h1>
+          REIMII<span> STUDIOS.</span>
+        </h1>
+        <p>
+          {t.hero.subtitle} {t.hero.accent}
+        </p>
+        <div className="actions">
+          <Link className="button" href={"/" + locale + "/proyectos"}>
+            {t.hero.cta1}
+          </Link>
+          <Link className="button secondary" href={"/" + locale + "/nosotros"}>
+            {t.hero.cta2}
+          </Link>
+        </div>
+      </section>
+      <section className="wrap section">
+        <span className="eyebrow">{t.featuredProjects.subtitle}</span>
+        <h2 className="heading">{t.featuredProjects.title}</h2>
+        <ProjectCards locale={locale} />
+      </section>
+      <section className="wrap section">
+        <div className="callout">
+          <h2>{t.cta.title}</h2>
+          <p>{t.cta.subtitle}</p>
+          <Link className="button" href={"/" + locale + "/contacto"}>
+            {t.cta.button}
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}

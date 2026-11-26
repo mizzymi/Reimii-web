@@ -1,2 +1,39 @@
-import Link from 'next/link';import Image from 'next/image';import {dictionary} from '@/lib/site';import {PROJECT_SLUGS,PROJECT_IMAGES} from '@/lib/projects';
-export function ProjectCards({locale}:{locale:string}){const t=dictionary(locale);return <div className="cards">{t.projects.map((p,i)=><article key={PROJECT_SLUGS[i]} className="card">{PROJECT_IMAGES[i]?<Image src={PROJECT_IMAGES[i]} alt={p.name} width={640} height={360} className="cover"/>:<div className="cover placeholder">{p.name}</div>}<div className="card-body"><small>{p.category} · {p.status}</small><h2>{p.name}</h2><p>{p.description}</p><Link className="text-link" href={'/'+locale+'/proyectos/'+PROJECT_SLUGS[i]}>{t.projectsPage.detail} →</Link></div></article>)}</div>}
+import Link from "next/link";
+import Image from "next/image";
+import { dictionary } from "@/lib/site";
+import { PROJECT_SLUGS, PROJECT_IMAGES } from "@/lib/projects";
+export function ProjectCards({ locale }: { locale: string }) {
+  const t = dictionary(locale);
+  return (
+    <div className="cards">
+      {t.projects.map((p, i) => (
+        <article key={PROJECT_SLUGS[i]} className="card">
+          {PROJECT_IMAGES[i] ? (
+            <Image
+              src={PROJECT_IMAGES[i]}
+              alt={p.name}
+              width={640}
+              height={360}
+              className="cover"
+            />
+          ) : (
+            <div className="cover placeholder">{p.name}</div>
+          )}
+          <div className="card-body">
+            <small>
+              {p.category} · {p.status}
+            </small>
+            <h2>{p.name}</h2>
+            <p>{p.description}</p>
+            <Link
+              className="text-link"
+              href={"/" + locale + "/proyectos/" + PROJECT_SLUGS[i]}
+            >
+              {t.projectsPage.detail} →
+            </Link>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}

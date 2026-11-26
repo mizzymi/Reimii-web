@@ -1,4 +1,3 @@
-
 const BASE_STATUS_COLORS = {
   beta: "bg-amber-500/40 text-amber-200 border-amber-400/60",
   available: "bg-emerald-500/40 text-emerald-100 border-emerald-400/60",

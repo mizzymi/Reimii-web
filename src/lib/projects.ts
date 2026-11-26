@@ -7,11 +7,7 @@ export const PROJECT_IMAGES = [
 ];
 
 export const PROJECT_SCREENSHOTS = [
-  [
-    
-    
-    
-  ],
+  [],
   [
     "https://raw.githubusercontent.com/Reimii-Studios/Reimii-website/master/public/images/c9129d45e_Mockup1.png",
     "https://raw.githubusercontent.com/Reimii-Studios/Reimii-website/master/public/images/52051f52b_Mockup2.png",

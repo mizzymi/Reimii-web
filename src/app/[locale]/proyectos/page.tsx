@@ -1,1 +1,22 @@
-import {dictionary,metadata} from '@/lib/site';import {ProjectCards} from '@/components/project-cards';type Props={params:Promise<{locale:string}>};export async function generateMetadata({params}:Props){const {locale}=await params;const t=dictionary(locale).projectsPage;return metadata(locale,'/proyectos',t.title,t.description)}export default async function Page({params}:Props){const {locale}=await params;const t=dictionary(locale).projectsPage;return <section className="wrap section"><span className="eyebrow">{t.subtitle}</span><h1>{t.title} <span>{t.titleAccent}</span></h1><p className="intro">{t.description}</p><ProjectCards locale={locale}/></section>}
+import { dictionary, metadata } from "@/lib/site";
+import { ProjectCards } from "@/components/project-cards";
+type Props = { params: Promise<{ locale: string }> };
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = dictionary(locale).projectsPage;
+  return metadata(locale, "/proyectos", t.title, t.description);
+}
+export default async function Page({ params }: Props) {
+  const { locale } = await params;
+  const t = dictionary(locale).projectsPage;
+  return (
+    <section className="wrap section">
+      <span className="eyebrow">{t.subtitle}</span>
+      <h1>
+        {t.title} <span>{t.titleAccent}</span>
+      </h1>
+      <p className="intro">{t.description}</p>
+      <ProjectCards locale={locale} />
+    </section>
+  );
+}

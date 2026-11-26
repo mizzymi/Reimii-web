@@ -1,3 +1,87 @@
-import Link from 'next/link';import Image from 'next/image';import {dictionary,metadata,project,origin} from '@/lib/site';import {PROJECT_SLUGS,PROJECT_SCREENSHOTS} from '@/lib/projects';type Props={params:Promise<{locale:string;slug:string}>};export function generateStaticParams(){return PROJECT_SLUGS.map(slug=>({slug}))}export const dynamicParams=false;
-export async function generateMetadata({params}:Props){const {locale,slug}=await params;const p=project(locale,slug);return metadata(locale,'/proyectos/'+slug,p.name+' — '+p.category,p.description,p.image||undefined)}
-export default async function Page({params}:Props){const {locale,slug}=await params;const p=project(locale,slug),t=dictionary(locale);const json={'@context':'https://schema.org','@type':p.type==='game'?'VideoGame':'SoftwareApplication',name:p.name,description:p.description,url:origin+'/'+locale+'/proyectos/'+slug,publisher:{'@type':'Organization',name:'Reimii Studios'},...(p.image?{image:p.image}:{})};return <section className="wrap section"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(json).replace(/</g,'\\u003c')}}/><Link className="text-link" href={'/'+locale+'/proyectos'}>← {t.nav.projects}</Link><div className="detail"><div>{p.image?<Image src={p.image} alt={p.name} width={1000} height={600} className="cover"/>:<div className="cover placeholder">{p.name}</div>}<div className="gallery">{PROJECT_SCREENSHOTS[p.index].map((src,i)=><Image key={src} src={src} alt={p.name+' '+(i+1)} width={640} height={360} className="cover"/>)}</div></div><div><span className="eyebrow">{p.category} · {p.status}</span><h1>{p.name}</h1><p className="intro">{p.description}</p><h2>{t.projectsPage.featuresLabel}</h2><ul>{p.features.map(f=><li key={f}>{f}</li>)}</ul></div></div></section>}
+import Link from "next/link";
+import Image from "next/image";
+import { dictionary, metadata, project, origin } from "@/lib/site";
+import { PROJECT_SLUGS, PROJECT_SCREENSHOTS } from "@/lib/projects";
+type Props = { params: Promise<{ locale: string; slug: string }> };
+export function generateStaticParams() {
+  return PROJECT_SLUGS.map((slug) => ({ slug }));
+}
+export const dynamicParams = false;
+export async function generateMetadata({ params }: Props) {
+  const { locale, slug } = await params;
+  const p = project(locale, slug);
+  return metadata(
+    locale,
+    "/proyectos/" + slug,
+    p.name + " — " + p.category,
+    p.description,
+    p.image || undefined,
+  );
+}
+export default async function Page({ params }: Props) {
+  const { locale, slug } = await params;
+  const p = project(locale, slug),
+    t = dictionary(locale);
+  const json = {
+    "@context": "https://schema.org",
+    "@type": p.type === "game" ? "VideoGame" : "SoftwareApplication",
+    name: p.name,
+    description: p.description,
+    url: origin + "/" + locale + "/proyectos/" + slug,
+    publisher: { "@type": "Organization", name: "Reimii Studios" },
+    ...(p.image ? { image: p.image } : {}),
+  };
+  return (
+    <section className="wrap section">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(json).replace(/</g, "\\u003c"),
+        }}
+      />
+      <Link className="text-link" href={"/" + locale + "/proyectos"}>
+        ← {t.nav.projects}
+      </Link>
+      <div className="detail">
+        <div>
+          {p.image ? (
+            <Image
+              src={p.image}
+              alt={p.name}
+              width={1000}
+              height={600}
+              className="cover"
+            />
+          ) : (
+            <div className="cover placeholder">{p.name}</div>
+          )}
+          <div className="gallery">
+            {PROJECT_SCREENSHOTS[p.index].map((src, i) => (
+              <Image
+                key={src}
+                src={src}
+                alt={p.name + " " + (i + 1)}
+                width={640}
+                height={360}
+                className="cover"
+              />
+            ))}
+          </div>
+        </div>
+        <div>
+          <span className="eyebrow">
+            {p.category} · {p.status}
+          </span>
+          <h1>{p.name}</h1>
+          <p className="intro">{p.description}</p>
+          <h2>{t.projectsPage.featuresLabel}</h2>
+          <ul>
+            {p.features.map((f) => (
+              <li key={f}>{f}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
