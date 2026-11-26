@@ -23,7 +23,7 @@ function AnimatedCounter({
 
     const duration = 1400;
     const startTime = performance.now();
-    let frameId;
+    let frameId: number;
 
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
