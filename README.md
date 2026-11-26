@@ -1,5 +1,8 @@
 # Reimii Studios — Next.js
+Migración basada en web.zip de julio de 2026. Mantiene los componentes, imágenes, colores y enlace a la tienda originales.
 
-Node.js 22+, npm install, npm run dev. Production: npm run build && npm start.
+1. Copia tus archivos `MalamPoek.ttf` y `Lucida.ttf` del ZIP original (`src/assets/`) a `public/fonts/` (comprueba la licencia antes de publicarlos).
+2. Node.js 22+: `npm install`, `npm run dev`.
+3. `npm run typecheck` y `npm run build` antes de desplegar.
 
-App Router, strict TypeScript, 12 localized routes, metadata, sitemap and robots. Canonical host: https://www.reimii.com. Original public artwork is referenced from the original repository until assets are copied locally. Velora artwork is missing in the original repository and uses a placeholder. Contact is a mailto link, not a delivery service. No analytics enabled pending consent setup. Build and visual QA pending.
+SEO: páginas localizadas, canonical, hreflang, Open Graph, sitemap, robots, JSON-LD y redirecciones de rutas antiguas. El contacto usa mailto y la tienda es externa. Analytics no incluido hasta configurar consentimiento. Compilación y comparación visual pendientes de validar.
