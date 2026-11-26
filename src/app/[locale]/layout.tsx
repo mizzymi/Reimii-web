@@ -49,35 +49,7 @@ export default async function Layout({
             }),
           }}
         />
-        <header>
-          <div className="nav wrap">
-            <Link href={"/" + locale} aria-label="Reimii Studios">
-              <Image
-                src={logo}
-                width={140}
-                height={44}
-                alt="Reimii"
-                className="logo"
-                priority
-              />
-            </Link>
-            <nav>
-              {links.map(([path, label]) => (
-                <Link key={path} href={"/" + locale + path}>
-                  {label}
-                </Link>
-              ))}
-            </nav>
-            <Controls locale={locale} locales={locales} />
-          </div>
-        </header>
-        <main>{children}</main>
-        <footer className="wrap">
-          <strong>REIMII STUDIOS</strong>
-          <p>{t.footer.tagline}</p>
-          <a href="mailto:shop@reimii.com">shop@reimii.com</a>
-          <p>© Reimii Studios · {t.footer.rights}</p>
-        </footer>
+        <OriginalProvider locale={locale as Locale}><Navbar/><main>{children}</main><Footer/></OriginalProvider>
       </body>
     </html>
   );
