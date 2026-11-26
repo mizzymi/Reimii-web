@@ -213,12 +213,14 @@ export default function Proyectos() {
                           {project.status}
                         </span>
 
-                        <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 backdrop-blur-md">
+                        {APP_RATINGS[projectIndex] != null && (
+                    <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 backdrop-blur-md">
                           <Star className="h-3.5 w-3.5 fill-current text-amber-300" />
                           <span className="text-xs font-bold text-white">
                             {APP_RATINGS[projectIndex]}
                           </span>
                         </div>
+                  )}
 
                         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
                           <p className="project-category-overlay text-[10px] font-bold uppercase tracking-[0.16em] text-white">

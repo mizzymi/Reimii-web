@@ -72,7 +72,7 @@ export default function ProjectDetail() {
   }
 
   const tags = PROJECT_TAGS[index] ?? [];
-  const rating = APP_RATINGS[index] ?? '—';
+  const rating = APP_RATINGS[index];
   const pp = t.projectsPage;
 
   const pageBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
@@ -162,6 +162,7 @@ export default function ProjectDetail() {
                 </span>
               </div>
 
+              {rating != null && (
               <div className="absolute right-5 top-5 rounded-2xl border border-white/15 bg-black/80 px-4 py-3 text-white backdrop-blur-md">
                 <div className="flex items-center gap-1">
                   {[0, 1, 2, 3, 4].map((star) => (
@@ -170,6 +171,7 @@ export default function ProjectDetail() {
                 </div>
                 <p className="mt-1 text-xs font-bold">{rating}</p>
               </div>
+              )}
 
               {screenshots.length > 1 && (
                 <>
@@ -253,7 +255,8 @@ export default function ProjectDetail() {
                   </div>
                 </div>
 
-                <div
+                {rating != null && (
+<div
                   className={`rounded-[1.35rem] border p-4 ${
                     isDark ? 'border-white/8 bg-white/[0.035]' : 'border-[#e8dde2] bg-white/60'
                   }`}
@@ -266,6 +269,7 @@ export default function ProjectDetail() {
                     <span className={`text-sm font-bold ${titleColor}`}>{rating}</span>
                   </div>
                 </div>
+                )}
               </div>
 
               <div className="mt-8">
