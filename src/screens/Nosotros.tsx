@@ -22,35 +22,35 @@ export default function Nosotros() {
       desc: v.passionDesc,
       accent: isDark
         ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-        : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]',
+        : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]',
     },
     {
       title: v.speed,
       desc: v.speedDesc,
       accent: isDark
         ? 'border-amber-300/20 bg-amber-300/10 text-amber-300'
-        : 'border-[#f1cf92]/55 bg-[#fff1d8] text-[#a76a19]',
+        : 'border-[#f1cf92]/55 bg-[#fff1d8] text-[#785016]',
     },
     {
       title: v.respect,
       desc: v.respectDesc,
       accent: isDark
         ? 'border-[#d9c6f2]/20 bg-[#d9c6f2]/10 text-[#d9c6f2]'
-        : 'border-[#d9c6f2]/55 bg-[#eee7f8] text-[#8264aa]',
+        : 'border-[#d9c6f2]/55 bg-[#eee7f8] text-[#614387]',
     },
     {
       title: v.simplicity,
       desc: v.simplicityDesc,
       accent: isDark
         ? 'border-rose-300/20 bg-rose-300/10 text-rose-300'
-        : 'border-[#e7bfc4]/55 bg-[#f8e6e8] text-[#a65f68]',
+        : 'border-[#e7bfc4]/55 bg-[#f8e6e8] text-[#873e49]',
     },
   ];
 
   const pageBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const titleColor = isDark ? 'text-white' : 'text-[#272229]';
-  const bodyColor = isDark ? 'text-white/62' : 'text-[#756c71]';
-  const mutedColor = isDark ? 'text-white/45' : 'text-[#8b8186]';
+  const bodyColor = isDark ? 'text-[#ded4e0]' : 'text-[#594d55]';
+  const mutedColor = isDark ? 'text-[#c9bdcd]' : 'text-[#62555e]';
 
   return (
     <main
@@ -80,7 +80,7 @@ export default function Nosotros() {
             className={`mb-5 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-bold uppercase tracking-[0.18em] ${
               isDark
                 ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
             }`}
           >
             <Sparkles className="h-3.5 w-3.5" />
@@ -91,7 +91,7 @@ export default function Nosotros() {
             className={`text-5xl font-black leading-[0.96] tracking-[-0.06em] sm:text-6xl lg:text-7xl ${titleColor}`}
           >
             {ap.title}
-            <span className={`block ${isDark ? 'text-[#f2b7d4]' : 'text-[#bd5f8d]'}`}>
+            <span className={`block ${isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'}`}>
               {ap.titleAccent}
             </span>
           </h1>
@@ -118,10 +118,10 @@ export default function Nosotros() {
               alt="Equipo REIMII"
               className="h-[25rem] w-full object-cover sm:h-[32rem] lg:h-[38rem]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
 
             <div className="absolute bottom-6 left-6 right-6 max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/65">Reimii</p>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ded4e0]">Reimii</p>
               <h2 className="mt-2 text-3xl font-black leading-[1] tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
                 Personas, ideas y proyectos con alma.
               </h2>
@@ -151,7 +151,7 @@ export default function Nosotros() {
             <div>
               <p
                 className={`text-xs font-bold uppercase tracking-[0.18em] ${
-                  isDark ? 'text-[#f2b7d4]' : 'text-[#a94f7c]'
+                  isDark ? 'text-[#f2b7d4]' : 'text-[#86345e]'
                 }`}
               >
                 Nuestra historia
@@ -176,7 +176,7 @@ export default function Nosotros() {
           >
             <p
               className={`text-xs font-bold uppercase tracking-[0.18em] ${
-                isDark ? 'text-[#f2b7d4]' : 'text-[#a94f7c]'
+                isDark ? 'text-[#f2b7d4]' : 'text-[#86345e]'
               }`}
             >
               Lo que nos define

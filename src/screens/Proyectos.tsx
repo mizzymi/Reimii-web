@@ -44,8 +44,8 @@ export default function Proyectos() {
 
   const pageBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const titleColor = isDark ? 'text-white' : 'text-[#272229]';
-  const bodyColor = isDark ? 'text-white/62' : 'text-[#756c71]';
-  const mutedColor = isDark ? 'text-white/45' : 'text-[#8b8186]';
+  const bodyColor = isDark ? 'text-[#ded4e0]' : 'text-[#594d55]';
+  const mutedColor = isDark ? 'text-[#c9bdcd]' : 'text-[#62555e]';
 
   return (
     <main
@@ -75,7 +75,7 @@ export default function Proyectos() {
             className={`mb-5 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-bold uppercase tracking-[0.18em] ${
               isDark
                 ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#a94f7c]'
+                : 'border-[#e7a8c7]/45 bg-[#fceaf3] text-[#86345e]'
             }`}
           >
             <Sparkles className="h-3.5 w-3.5" />
@@ -86,7 +86,7 @@ export default function Proyectos() {
             className={`text-5xl font-black leading-[0.96] tracking-[-0.06em] sm:text-6xl lg:text-7xl ${titleColor}`}
           >
             {pp.title}
-            <span className={`block ${isDark ? 'text-[#f2b7d4]' : 'text-[#bd5f8d]'}`}>
+            <span className={`block ${isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'}`}>
               {pp.titleAccent}
             </span>
           </h1>
@@ -127,8 +127,8 @@ export default function Proyectos() {
                 onClick={() => setActiveTags([])}
                 className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-bold transition-colors ${
                   isDark
-                    ? 'border-white/10 bg-white/5 text-white/60 hover:text-white'
-                    : 'border-[#ded2d7] bg-white/70 text-[#756c71] hover:text-[#272229]'
+                    ? 'border-white/10 bg-white/5 text-[#d3c8d5] hover:text-white'
+                    : 'border-[#ded2d7] bg-white/70 text-[#594d55] hover:text-[#272229]'
                 }`}
               >
                 <X className="h-3.5 w-3.5" />
@@ -153,15 +153,15 @@ export default function Proyectos() {
                         : 'border-[#d884ae] bg-[#f9dce9] text-[#91446b]'
                       : index % 3 === 0
                         ? isDark
-                          ? 'border-white/8 bg-white/[0.035] text-white/55 hover:border-[#f2b7d4]/25 hover:text-[#f2b7d4]'
-                          : 'border-[#eadde3] bg-white/55 text-[#756c71] hover:border-[#e7a8c7] hover:text-[#a94f7c]'
+                          ? 'border-white/8 bg-white/[0.035] text-[#d3c8d5] hover:border-[#f2b7d4]/25 hover:text-[#f2b7d4]'
+                          : 'border-[#eadde3] bg-white/55 text-[#594d55] hover:border-[#e7a8c7] hover:text-[#86345e]'
                         : index % 3 === 1
                           ? isDark
-                            ? 'border-white/8 bg-white/[0.035] text-white/55 hover:border-[#d9c6f2]/25 hover:text-[#d9c6f2]'
-                            : 'border-[#e2d9ef] bg-[#f5f0fb]/75 text-[#756c71] hover:border-[#cdb8eb] hover:text-[#8264aa]'
+                            ? 'border-white/8 bg-white/[0.035] text-[#d3c8d5] hover:border-[#d9c6f2]/25 hover:text-[#d9c6f2]'
+                            : 'border-[#e2d9ef] bg-[#f5f0fb]/75 text-[#594d55] hover:border-[#cdb8eb] hover:text-[#614387]'
                           : isDark
-                            ? 'border-white/8 bg-white/[0.035] text-white/55 hover:border-amber-300/25 hover:text-amber-300'
-                            : 'border-[#efdfbf] bg-[#fff8ea]/75 text-[#756c71] hover:border-[#e8c986] hover:text-[#9a671d]'
+                            ? 'border-white/8 bg-white/[0.035] text-[#d3c8d5] hover:border-amber-300/25 hover:text-amber-300'
+                            : 'border-[#efdfbf] bg-[#fff8ea]/75 text-[#594d55] hover:border-[#e8c986] hover:text-[#785016]'
                   }`}
                 >
                   #{tag}
@@ -213,7 +213,7 @@ export default function Proyectos() {
                           {project.status}
                         </span>
 
-                        <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/40 px-3 py-1.5 backdrop-blur-md">
+                        <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/80 px-3 py-1.5 backdrop-blur-md">
                           <Star className="h-3.5 w-3.5 fill-current text-amber-300" />
                           <span className="text-xs font-bold text-white">
                             {APP_RATINGS[projectIndex]}
@@ -221,10 +221,10 @@ export default function Proyectos() {
                         </div>
 
                         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/70">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white">
                             {project.category}
                           </p>
-                          <span className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/35 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md">
+                          <span className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/80 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md">
                             {project.type === 'game' ? (
                               <Gamepad2 className="h-3 w-3" />
                             ) : (
@@ -255,11 +255,11 @@ export default function Proyectos() {
                                     : 'border-[#d884ae] bg-[#f9dce9] text-[#91446b]'
                                   : tagIndex % 2 === 0
                                     ? isDark
-                                      ? 'border-white/8 bg-white/[0.035] text-white/45'
-                                      : 'border-[#eadde3] bg-[#faf6f8] text-[#8b8186]'
+                                      ? 'border-white/8 bg-white/[0.035] text-[#c9bdcd]'
+                                      : 'border-[#eadde3] bg-[#faf6f8] text-[#62555e]'
                                     : isDark
-                                      ? 'border-white/8 bg-white/[0.035] text-white/45'
-                                      : 'border-[#e2d9ef] bg-[#f5f0fb] text-[#8b8186]'
+                                      ? 'border-white/8 bg-white/[0.035] text-[#c9bdcd]'
+                                      : 'border-[#e2d9ef] bg-[#f5f0fb] text-[#62555e]'
                               }`}
                             >
                               #{tag}
@@ -270,8 +270,8 @@ export default function Proyectos() {
                             <span
                               className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold ${
                                 isDark
-                                  ? 'border-white/8 bg-white/[0.035] text-white/45'
-                                  : 'border-[#e8dde2] bg-white/55 text-[#8b8186]'
+                                  ? 'border-white/8 bg-white/[0.035] text-[#c9bdcd]'
+                                  : 'border-[#e8dde2] bg-white/55 text-[#62555e]'
                               }`}
                             >
                               +{projectTags.length - 3}
@@ -286,7 +286,7 @@ export default function Proyectos() {
                           className={`group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-bold transition-colors ${
                             isDark
                               ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                              : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                              : 'bg-[#282329] text-white hover:bg-[#8e3864]'
                           }`}
                         >
                           {pp.detail}
@@ -309,7 +309,7 @@ export default function Proyectos() {
               }`}
             >
               <SearchX
-                className={`mx-auto h-9 w-9 ${isDark ? 'text-white/30' : 'text-[#b4a6ad]'}`}
+                className={`mx-auto h-9 w-9 ${isDark ? 'text-white/30' : 'text-[#74636e]'}`}
               />
               <p className={`mt-4 text-sm font-medium ${bodyColor}`}>
                 No projects match the selected tags.
@@ -320,7 +320,7 @@ export default function Proyectos() {
                 className={`mt-5 rounded-full border px-4 py-2 text-xs font-bold ${
                   isDark
                     ? 'border-white/10 bg-white/5 text-white/70'
-                    : 'border-[#ded2d7] bg-white/70 text-[#756c71]'
+                    : 'border-[#ded2d7] bg-white/70 text-[#594d55]'
                 }`}
               >
                 Clear filters

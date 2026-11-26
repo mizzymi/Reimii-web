@@ -66,7 +66,7 @@ export default function StatsSection() {
       label: s.launched,
       accent: isDark
         ? 'bg-[#f2b7d4]/12 text-[#f2b7d4] border-[#f2b7d4]/20'
-        : 'bg-[#fceaf3] text-[#a94f7c] border-[#e7a8c7]/45',
+        : 'bg-[#fceaf3] text-[#86345e] border-[#e7a8c7]/45',
     },
     {
       icon: Download,
@@ -75,7 +75,7 @@ export default function StatsSection() {
       label: s.downloads,
       accent: isDark
         ? 'bg-[#d9c6f2]/12 text-[#d9c6f2] border-[#d9c6f2]/20'
-        : 'bg-[#eee7f8] text-[#8264aa] border-[#d9c6f2]/55',
+        : 'bg-[#eee7f8] text-[#614387] border-[#d9c6f2]/55',
     },
     {
       icon: Star,
@@ -84,7 +84,7 @@ export default function StatsSection() {
       label: s.rating,
       accent: isDark
         ? 'bg-amber-300/10 text-amber-300 border-amber-300/20'
-        : 'bg-[#fff1d8] text-[#a76a19] border-[#f1cf92]/55',
+        : 'bg-[#fff1d8] text-[#785016] border-[#f1cf92]/55',
     },
     {
       icon: Users,
@@ -93,13 +93,13 @@ export default function StatsSection() {
       label: s.team,
       accent: isDark
         ? 'bg-rose-300/10 text-rose-300 border-rose-300/20'
-        : 'bg-[#f8e6e8] text-[#a65f68] border-[#e7bfc4]/55',
+        : 'bg-[#f8e6e8] text-[#873e49] border-[#e7bfc4]/55',
     },
   ];
 
   const sectionBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const valueColor = isDark ? 'text-white' : 'text-[#272229]';
-  const labelColor = isDark ? 'text-white/55' : 'text-[#756c71]';
+  const labelColor = isDark ? 'text-[#d3c8d5]' : 'text-[#594d55]';
 
   return (
     <section

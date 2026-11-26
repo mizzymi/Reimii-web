@@ -60,7 +60,7 @@ export default function HeroSection() {
 
   const sectionBg = isDark ? 'bg-[#151218]' : 'bg-[#f7f1e9]';
   const textMain = isDark ? 'text-white' : 'text-[#272229]';
-  const textMuted = isDark ? 'text-white/65' : 'text-[#6f656b]';
+  const textMuted = isDark ? 'text-[#ded4e0]' : 'text-[#594d55]';
 
   return (
     <section
@@ -113,7 +113,7 @@ export default function HeroSection() {
             className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] ${
               isDark
                 ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                : 'border-[#e7a8c7]/45 bg-[#fceaf3]/90 text-[#a94f7c]'
+                : 'border-[#e7a8c7]/45 bg-[#fceaf3]/90 text-[#86345e]'
             }`}
           >
             <Sparkles className="h-3.5 w-3.5" />
@@ -127,7 +127,7 @@ export default function HeroSection() {
             className={`mx-auto max-w-3xl text-4xl font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:mx-0 lg:text-6xl xl:text-7xl ${textMain}`}
           >
             Ideas con personalidad,
-            <span className={`block ${isDark ? 'text-[#f2b7d4]' : 'text-[#bd5f8d]'}`}>
+            <span className={`block ${isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'}`}>
               hechas a la manera Reimii.
             </span>
           </motion.h1>
@@ -158,7 +158,7 @@ export default function HeroSection() {
                 className={`group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold transition-colors sm:w-auto ${
                   isDark
                     ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                    : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                    : 'bg-[#282329] text-white hover:bg-[#8e3864]'
                 }`}
               >
                 {h.cta1}
@@ -203,7 +203,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 transition-colors ${
-                isDark ? 'hover:text-[#f2b7d4]' : 'hover:text-[#bd5f8d]'
+                isDark ? 'hover:text-[#f2b7d4]' : 'hover:text-[#8e3864]'
               }`}
             >
               <ShoppingBag className="h-4 w-4" />
@@ -240,7 +240,7 @@ export default function HeroSection() {
           >
             <div
               className={`absolute right-5 top-5 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] ${
-                isDark ? 'bg-[#f2b7d4]/12 text-[#f2b7d4]' : 'bg-[#f9dce9] text-[#a94f7c]'
+                isDark ? 'bg-[#f2b7d4]/12 text-[#f2b7d4]' : 'bg-[#f9dce9] text-[#86345e]'
               }`}
             >
               Reimii

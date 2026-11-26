@@ -1,7 +1,7 @@
 const BASE_STATUS_COLORS = {
-  beta: 'bg-amber-500/40 text-amber-200 border-amber-400/60',
-  available: 'bg-emerald-500/40 text-emerald-100 border-emerald-400/60',
-  soon: 'bg-violet-500/40 text-violet-100 border-violet-400/60',
+  beta: 'bg-amber-950 text-amber-100 border-amber-400/80',
+  available: 'bg-emerald-950 text-emerald-100 border-emerald-400/80',
+  soon: 'bg-violet-950 text-violet-100 border-violet-400/80',
 };
 
 export const translations = {

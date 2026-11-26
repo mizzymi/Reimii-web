@@ -28,12 +28,12 @@ export default function Footer() {
     ? 'bg-white/[0.04] border-white/10'
     : 'bg-white/70 border-white shadow-[0_24px_70px_rgba(88,65,74,0.08)]';
 
-  const mutedText = isDark ? 'text-white/55' : 'text-[#756c71]';
+  const mutedText = isDark ? 'text-[#d3c8d5]' : 'text-[#594d55]';
   const headingText = isDark ? 'text-white' : 'text-[#272229]';
 
   const linkClass = isDark
-    ? 'text-white/60 hover:text-[#f2b7d4]'
-    : 'text-[#6f656b] hover:text-[#bd5f8d]';
+    ? 'text-[#d3c8d5] hover:text-[#f2b7d4]'
+    : 'text-[#594d55] hover:text-[#8e3864]';
 
   return (
     <footer className={`relative overflow-hidden transition-colors duration-500 ${footerBg}`}>
@@ -60,7 +60,7 @@ export default function Footer() {
                 className={`mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] ${
                   isDark
                     ? 'border-[#f2b7d4]/20 bg-[#f2b7d4]/10 text-[#f2b7d4]'
-                    : 'border-[#e7a8c7]/40 bg-[#fceaf3] text-[#a94f7c]'
+                    : 'border-[#e7a8c7]/40 bg-[#fceaf3] text-[#86345e]'
                 }`}
               >
                 <Sparkles className="h-3.5 w-3.5" />
@@ -88,7 +88,7 @@ export default function Footer() {
               className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-colors sm:w-auto ${
                 isDark
                   ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
-                  : 'bg-[#282329] text-white hover:bg-[#bd5f8d]'
+                  : 'bg-[#282329] text-white hover:bg-[#8e3864]'
               }`}
             >
               Visitar la tienda
@@ -120,8 +120,8 @@ export default function Footer() {
                 aria-label="Instagram de Reimii"
                 className={`grid h-10 w-10 place-items-center rounded-full border transition-colors ${
                   isDark
-                    ? 'border-white/10 bg-white/5 text-white/65 hover:border-[#f2b7d4]/40 hover:text-[#f2b7d4]'
-                    : 'border-[#e8dde2] bg-white/80 text-[#766b71] hover:border-[#e7a8c7] hover:text-[#bd5f8d]'
+                    ? 'border-white/10 bg-white/5 text-[#ded4e0] hover:border-[#f2b7d4]/40 hover:text-[#f2b7d4]'
+                    : 'border-[#e8dde2] bg-white/80 text-[#594d55] hover:border-[#e7a8c7] hover:text-[#8e3864]'
                 }`}
               >
                 <Instagram className="h-4 w-4" />
@@ -134,8 +134,8 @@ export default function Footer() {
                 aria-label={`Enviar un correo a ${CONTACT_EMAIL}`}
                 className={`grid h-10 w-10 place-items-center rounded-full border transition-colors ${
                   isDark
-                    ? 'border-white/10 bg-white/5 text-white/65 hover:border-[#f2b7d4]/40 hover:text-[#f2b7d4]'
-                    : 'border-[#e8dde2] bg-white/80 text-[#766b71] hover:border-[#e7a8c7] hover:text-[#bd5f8d]'
+                    ? 'border-white/10 bg-white/5 text-[#ded4e0] hover:border-[#f2b7d4]/40 hover:text-[#f2b7d4]'
+                    : 'border-[#e8dde2] bg-white/80 text-[#594d55] hover:border-[#e7a8c7] hover:text-[#8e3864]'
                 }`}
               >
                 <Mail className="h-4 w-4" />
@@ -219,7 +219,7 @@ export default function Footer() {
           <p className={`flex items-center gap-1.5 text-xs sm:text-sm ${mutedText}`}>
             Hecho con
             <Heart
-              className={`h-3.5 w-3.5 fill-current ${isDark ? 'text-[#f2b7d4]' : 'text-[#ca6d99]'}`}
+              className={`h-3.5 w-3.5 fill-current ${isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'}`}
             />
             en Barcelona
           </p>

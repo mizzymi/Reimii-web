@@ -118,3 +118,12 @@ h6 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Keyboard focus remains visible on both brand palettes. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid #86345e;
+  outline-offset: 3px;
+}
+.dark :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline-color: #f2b7d4;
+}
