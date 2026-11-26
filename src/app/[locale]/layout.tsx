@@ -7,10 +7,13 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from 'sonner';
 import '../globals.css';
+import JsonLd from '@/components/JsonLd';
 export const metadata: Metadata = {
   metadataBase: new URL(origin),
   title: { default: 'Reimii Studios', template: '%s | Reimii Studios' },
-  icons: { icon: '/images/logo-bundle.png' },
+  icons: { icon: '/images/logo-bundle.png', apple: '/images/logo-bundle.png' },
+  applicationName: 'Reimii Studios',
+  ...(process.env.GOOGLE_SITE_VERIFICATION ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } } : {}),
 };
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -28,19 +31,7 @@ export default async function Layout({
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Reimii Studios',
-              url: origin,
-              logo: origin + '/images/logo.png',
-              sameAs: ['https://www.instagram.com/reimii.studios/'],
-            }),
-          }}
-        />
+        <JsonLd data={{ '@context': 'https://schema.org', '@graph': [{ '@type': 'Organization', '@id': origin + '/#organization', name: 'Reimii Studios', url: origin, logo: origin + '/images/logo.png', email: 'shop@reimii.com', sameAs: ['https://www.instagram.com/reimii.studios/'] }, { '@type': 'WebSite', '@id': origin + '/#website', name: 'Reimii Studios', url: origin, inLanguage: locales, publisher: { '@id': origin + '/#organization' } }] }} />
         <LanguageProvider locale={locale as Locale}>
           <ThemeProvider>
             <Navbar />

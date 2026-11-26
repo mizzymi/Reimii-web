@@ -1,7 +1,8 @@
 'use client';
+import Image from 'next/image';
 import React, { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useNavigate } from '@/lib/navigation';
+import { Link } from '@/lib/navigation';
 import { ArrowRight, Gamepad2, SearchX, Smartphone, Sparkles, Star, Tag, X } from 'lucide-react';
 import { useLanguage } from '../components/i18n/LanguageContext';
 import { useTheme } from '../components/ThemeContext';
@@ -17,7 +18,6 @@ const ALL_TAGS = [...new Set(PROJECT_TAGS.flat())].sort();
 export default function Proyectos() {
   const { t } = useLanguage();
   const { isDark } = useTheme();
-  const navigate = useNavigate();
   const [activeTags, setActiveTags] = useState<string[]>([]);
 
   const pp = t.projectsPage;
@@ -197,12 +197,8 @@ export default function Proyectos() {
                       }`}
                     >
                       <div className="relative m-3 overflow-hidden rounded-[1.45rem]">
-                        <div className="aspect-[4/3] overflow-hidden">
-                          <img
-                            src={PROJECT_IMAGES[projectIndex]}
-                            alt={project.name}
-                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.055]"
-                          />
+                        <div className="relative aspect-[4/3] overflow-hidden">
+                          <Image src={PROJECT_IMAGES[projectIndex]} alt={project.name + ' — ' + project.category} fill sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 30vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.055]" />
                         </div>
 
                         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
@@ -281,10 +277,9 @@ export default function Proyectos() {
                           )}
                         </div>
 
-                        <motion.button
-                          type="button"
-                          onClick={() => navigate(`/Proyectos/${PROJECT_SLUGS[projectIndex]}`)}
-                          whileTap={{ scale: 0.98 }}
+                        <Link
+                    to={`/Proyectos/${PROJECT_SLUGS[projectIndex]}`}
+                    aria-label={pp.detail + ': ' + project.name}
                           className={`group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-bold transition-colors ${
                             isDark
                               ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
@@ -293,7 +288,7 @@ export default function Proyectos() {
                         >
                           {pp.detail}
                           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </motion.button>
+                        </Link>
                       </div>
                     </div>
                   </motion.article>

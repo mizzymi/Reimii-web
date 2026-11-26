@@ -1,6 +1,7 @@
 'use client';
 import React, { useMemo } from 'react';
 import { Link } from '@/lib/navigation';
+import { seoCopy } from '@/lib/seo-copy';
 import { motion } from 'framer-motion';
 import { ArrowRight, Box, Heart, ShoppingBag, Sparkles } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -54,7 +55,8 @@ function FloatingDecor({ isDark }: { isDark: boolean }) {
 }
 
 export default function HeroSection() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const copy = seoCopy(lang);
   const { isDark } = useTheme();
   const h = t.hero;
 
@@ -126,9 +128,9 @@ export default function HeroSection() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className={`mx-auto max-w-3xl text-4xl font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:mx-0 lg:text-6xl xl:text-7xl ${textMain}`}
           >
-            Ideas con personalidad,
+            {copy.heroTitle}
             <span className={`block ${isDark ? 'text-[#f2b7d4]' : 'text-[#8e3864]'}`}>
-              hechas a la manera Reimii.
+              {copy.heroAccent}
             </span>
           </motion.h1>
 
@@ -196,7 +198,7 @@ export default function HeroSection() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Heart className="h-4 w-4" />
-              Hecho con cariño
+              {copy.handmade}
             </span>
             <a
               href={SHOP_URL}
@@ -273,8 +275,8 @@ export default function HeroSection() {
                 animate={{ y: [0, -4, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <p className={`text-xs font-bold ${textMain}`}>Creatividad + tecnología</p>
-                <p className={`mt-1 text-[11px] ${textMuted}`}>Diseños que conectan</p>
+                <p className={`text-xs font-bold ${textMain}`}>{copy.creative}</p>
+                <p className={`mt-1 text-[11px] ${textMuted}`}>{copy.designs}</p>
               </motion.div>
             </div>
           </div>

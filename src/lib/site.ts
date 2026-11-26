@@ -16,6 +16,13 @@ export const paths = [
   '/contacto',
   ...PROJECT_SLUGS.map((s) => '/proyectos/' + s),
 ];
+export function pageUrl(locale: string, path = '') {
+  return origin + '/' + locale + path;
+}
+export function alternateLanguages(path: string) {
+  return { ...Object.fromEntries(locales.map(l => [l, pageUrl(l, path)])), 'x-default': pageUrl('es', path) };
+}
+const ogLocales: Record<Locale, string> = { es: 'es_ES', en: 'en_US', ca: 'ca_ES', fr: 'fr_FR', de: 'de_DE', pt: 'pt_BR', ru: 'ru_RU', ar: 'ar_SA', hi: 'hi_IN', ja: 'ja_JP', ko: 'ko_KR', zh: 'zh_CN' };
 export function metadata(
   locale: string,
   path: string,
@@ -23,30 +30,31 @@ export function metadata(
   description: string,
   image = '/images/logo.png',
 ): Metadata {
-  const url = origin + '/' + locale + path;
+  const url = pageUrl(locale, path);
+  const socialTitle = title + ' | Reimii Studios';
   return {
     title,
     description,
     alternates: {
       canonical: url,
-      languages: {
-        ...Object.fromEntries(locales.map((l) => [l, origin + '/' + l + path])),
-        'x-default': origin + '/es' + path,
-      },
+      languages: alternateLanguages(path),
     },
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
     openGraph: {
-      title,
+      title: socialTitle,
+      locale: ogLocales[locale as Locale],
+      alternateLocale: locales.filter(l => l !== locale).map(l => ogLocales[l]),
       description,
       url,
       siteName: 'Reimii Studios',
       type: 'website',
-      images: [image],
+      images: [{ url: image, alt: title }],
     },
-    twitter: { card: 'summary_large_image', title, description, images: [image] },
+    twitter: { card: 'summary_large_image', title: socialTitle, description, images: [{ url: image, alt: title }] },
   };
 }
 export function project(locale: string, slug: string) {
   const i = PROJECT_SLUGS.indexOf(slug);
   if (i < 0) notFound();
-  return { ...dictionary(locale).projects[i], image: PROJECT_IMAGES[i] };
+  return { ...dictionary(locale).projects[i], image: PROJECT_IMAGES[i], index: i };
 }

@@ -1,6 +1,7 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
-import { Link, useNavigate } from '@/lib/navigation';
+import { Link } from '@/lib/navigation';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Sparkles, Star } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -10,7 +11,6 @@ import { PROJECT_IMAGES, APP_RATINGS, PROJECT_SLUGS } from '../projects/projects
 export default function FeaturedProjects() {
   const { t } = useLanguage();
   const { isDark } = useTheme();
-  const navigate = useNavigate();
 
   const fp = t.featuredProjects;
   const pp = t.projectsPage;
@@ -103,14 +103,8 @@ export default function FeaturedProjects() {
                 }`}
               >
                 <div className="relative m-3 overflow-hidden rounded-[1.45rem]">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <motion.img
-                      src={PROJECT_IMAGES[i]}
-                      alt={project.name}
-                      className="h-full w-full object-cover"
-                      whileHover={{ scale: 1.055 }}
-                      transition={{ duration: 0.65, ease: 'easeOut' }}
-                    />
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image src={PROJECT_IMAGES[i]} alt={project.name + ' — ' + project.category} fill sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 30vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.055]" />
                   </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
@@ -146,10 +140,9 @@ export default function FeaturedProjects() {
                     {project.description}
                   </p>
 
-                  <motion.button
-                    type="button"
-                    onClick={() => navigate(`/Proyectos/${PROJECT_SLUGS[i]}`)}
-                    whileTap={{ scale: 0.98 }}
+                  <Link
+                    to={`/Proyectos/${PROJECT_SLUGS[i]}`}
+                    aria-label={pp.detail + ': ' + project.name}
                     className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-bold transition-colors ${
                       isDark
                         ? 'bg-[#f2b7d4] text-[#261d24] hover:bg-[#fac8df]'
@@ -158,7 +151,7 @@ export default function FeaturedProjects() {
                   >
                     {pp.detail}
                     <ExternalLink className="h-4 w-4" />
-                  </motion.button>
+                  </Link>
                 </div>
               </div>
             </motion.article>

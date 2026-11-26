@@ -1,11 +1,11 @@
 import Screen from '@/screens/Home';
-import { dictionary, metadata } from '@/lib/site';
+import { dictionary, metadata, type Locale } from '@/lib/site';
+import { seoCopy } from '@/lib/seo-copy';
 type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  const t = dictionary(locale).hero;
-  return metadata(locale, '', t.badge, t.subtitle);
+  dictionary(locale);
+  const seo = seoCopy(locale as Locale);
+  return metadata(locale, '', seo.homeTitle, seo.description);
 }
-export default function Page() {
-  return <Screen />;
-}
+export default function Page() { return <main><Screen /></main>; }
